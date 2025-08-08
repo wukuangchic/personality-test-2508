@@ -1,0 +1,45 @@
+/* Basic reset */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+body { color: #111; background: #f8fafc; }
+
+/* Layout */
+.container { max-width: 860px; margin: 0 auto; padding: 16px; }
+header h1 { margin: 24px 0 8px; font-size: 28px; }
+.sub { color: #555; margin-top: 0; }
+.foot { color: #666; font-size: 13px; text-align: center; margin: 24px auto 48px; }
+
+/* Card-ish blocks */
+fieldset { border: 1px solid #e5e7eb; border-radius: 14px; padding: 16px; background: #fff; }
+legend { font-weight: 600; padding: 0 8px; }
+.q { margin-bottom: 14px; }
+.q-label { display: block; font-weight: 600; margin-bottom: 8px; }
+
+/* Likert row */
+.options { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.opt { border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 8px; text-align: center; background: #fff; cursor: pointer; user-select: none; }
+.opt input { display: none; }
+.opt.checked { outline: 2px solid #111827; }
+
+/* Buttons */
+.actions { display: flex; gap: 12px; margin: 18px 0; }
+.btn { appearance: none; border: 1px solid #111827; background: #111827; color: #fff; padding: 10px 16px; border-radius: 12px; cursor: pointer; font-weight: 600; }
+.btn:hover { filter: brightness(0.95); }
+.btn.ghost { background: #fff; color: #111827; }
+
+/* Utilities */
+.tiny { font-size: 12px; color: #555; }
+.hidden { display: none !important; }
+
+/* Result page */
+.result-wrap { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 20px; }
+.result-type { font-size: 26px; margin-bottom: 4px; }
+.badge { display: inline-block; padding: 4px 10px; border-radius: 999px; border: 1px solid #e5e7eb; background: #f3f4f6; font-size: 12px; margin-left: 8px; }
+.kv { margin-top: 10px; font-size: 14px; color: #333; }
+.kv code { background: #f3f4f6; padding: 1px 6px; border-radius: 6px; }
+.btns { display: flex; gap: 10px; margin-top: 16px; }
+.hr { height: 1px; background: #e5e7eb; margin: 16px 0; }
+
+@media (max-width: 520px) {
+  .options { grid-template-columns: 1fr; }
+}
