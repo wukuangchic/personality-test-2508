@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>连接者（社交驱动）｜测试结果</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>你的结果</h1>
+  </header>
+
+  <main class="container">
+    <div class="result-wrap">
+      <div class="result-type">连接者（社交驱动）<span class="badge">非临床 · 娱乐向</span></div>
+      <div class="kv">类型代号：<code>connector</code></div>
+      <div class="hr"></div>
+      <h3>你的优势</h3>
+      <ul>
+        <li>善于沟通与协作，能快速建立信任与默契。</li><li>在团队中为他人赋能，拉动信息流通与共识达成。</li><li>擅长资源整合，推动项目跨部门落地。</li>
+      </ul>
+      <h3>给你的建议</h3>
+      <ul>
+        <li>为复杂任务建立清单与节奏板，避免“说得多做得少”。</li><li>学会对低优先级请求礼貌拒绝，保护深度工作时间。</li><li>与“分析者”搭档，用数据证明方案，提升说服力。</li>
+      </ul>
+
+      <div class="hr"></div>
+      <h3>本次测评维度分数</h3>
+      <div id="scores" class="kv">载入中…</div>
+
+      <div class="btns">
+        <a class="btn" href="../index.html">再测一次</a>
+        <button class="btn ghost" id="copyBtn">复制结果链接</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container foot">
+    <p>© 2025 Psychotest · 本测试仅供娱乐与自我反思。</p>
+  </footer>
+
+  <script>
+// 读取 query 分数并展示
+(function () {
+  const p = new URLSearchParams(location.search);
+  const a = Number(p.get("analyst")||0);
+  const e = Number(p.get("explorer")||0);
+  const o = Number(p.get("organizer")||0);
+  const c = Number(p.get("connector")||0);
+  const scores = [
+    ["连接者 connector", c],
+    ["探索者 explorer", e],
+    ["组织者 organizer", o],
+    ["分析者 analyst", a],
+  ];
+  const total = a + e + o + c;
+  const parts = scores.map(([k,v]) => k + "：" + v).join(" ｜ ");
+  document.getElementById("scores").textContent = parts + (total ? " ｜ 总分：" + total : "");
+})();
+
+// 复制链接
+document.getElementById("copyBtn").addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(location.href);
+    alert("已复制当前结果链接");
+  } catch (err) {
+    alert("复制失败，请手动复制地址栏链接");
+  }
+});
+  </script>
+</body>
+</html>
