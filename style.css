@@ -1,45 +1,270 @@
-/* Basic reset */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
-body { color: #111; background: #f8fafc; }
+/* === Psychotest Modern Theme (v1.0) =======================================
+   Design goals:
+   - Clean, airy layout with card-style sections
+   - High-contrast, accessible controls
+   - Mobile-first, responsive
+   - Minimal dependencies (system fonts only)
+   - Works with existing HTML/JS (no markup changes)
+=========================================================================== */
+
+:root{
+  --bg: #f7f8fb;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: #e5e7eb;
+  --primary: #6366f1;   /* indigo */
+  --primary-weak:#eef2ff;
+  --accent: #22c55e;    /* green, for success states */
+  --danger: #ef4444;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 24px rgba(2,6,23,0.06), 0 2px 8px rgba(2,6,23,0.04);
+  --shadow-inset: inset 0 0 0 1px var(--line);
+  --focus: 0 0 0 3px rgba(99,102,241,.35);
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0b1220;
+    --card: #0f172a;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --line: #1f2937;
+    --primary: #818cf8;
+    --primary-weak:#1e293b;
+    --accent: #34d399;
+    --danger: #f87171;
+    --shadow: 0 8px 24px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.25);
+    --shadow-inset: inset 0 0 0 1px var(--line);
+    --focus: 0 0 0 3px rgba(129,140,248,.45);
+  }
+}
+
+/* Reset & base */
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",
+               "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 10% -10%, var(--primary-weak), transparent) ,
+              radial-gradient(900px 500px at 110% 10%, var(--primary-weak), transparent),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  letter-spacing: .2px;
+}
 
 /* Layout */
-.container { max-width: 860px; margin: 0 auto; padding: 16px; }
-header h1 { margin: 24px 0 8px; font-size: 28px; }
-.sub { color: #555; margin-top: 0; }
-.foot { color: #666; font-size: 13px; text-align: center; margin: 24px auto 48px; }
+.container{ max-width: 920px; margin: 0 auto; padding: 20px; }
 
-/* Card-ish blocks */
-fieldset { border: 1px solid #e5e7eb; border-radius: 14px; padding: 16px; background: #fff; }
-legend { font-weight: 600; padding: 0 8px; }
-.q { margin-bottom: 14px; }
-.q-label { display: block; font-weight: 600; margin-bottom: 8px; }
+header.container{
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 10px;
+}
+header h1{
+  margin: 0 0 8px;
+  font-size: clamp(28px, 3.6vw, 40px);
+  letter-spacing: .6px;
+}
+.sub{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
 
-/* Likert row */
-.options { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
-.opt { border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 8px; text-align: center; background: #fff; cursor: pointer; user-select: none; }
-.opt input { display: none; }
-.opt.checked { outline: 2px solid #111827; }
+.foot{
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+  margin: 36px auto 56px;
+}
+
+/* Card / form shell */
+form#quizForm{
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: clamp(14px, 2.5vw, 24px);
+  border: 1px solid var(--line);
+}
+
+/* Fieldset as card sections */
+fieldset{
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0 0 18px;
+}
+legend{
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+.q{ margin: 14px 0 18px; }
+.q-label{
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+/* Likert options */
+.options{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: 10px;
+}
+@media (max-width: 560px){
+  .options{ grid-template-columns: 1fr; }
+}
+
+.opt{
+  position: relative;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,0)) , var(--card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-inset);
+  transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+.opt:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+.opt:active{ transform: translateY(0); }
+
+/* Custom radio */
+.opt input[type="radio"]{
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--muted);
+  border-radius: 999px;
+  display: inline-grid;
+  place-content: center;
+  background: transparent;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.opt input[type="radio"]::before{
+  content: "";
+  width: 8px; height: 8px; border-radius: 999px;
+  transform: scale(0);
+  transition: transform .15s ease-in-out;
+  background: var(--primary);
+}
+.opt input[type="radio"]:checked{
+  border-color: var(--primary);
+  box-shadow: var(--focus);
+}
+.opt input[type="radio"]:checked::before{ transform: scale(1); }
+
+/* When JS toggles .checked on the label */
+.opt.checked{
+  background: linear-gradient(180deg, rgba(99,102,241,.08), rgba(0,0,0,0)) , var(--card);
+  box-shadow: var(--shadow);
+  outline: 1px solid color-mix(in oklab, var(--primary) 45%, var(--line));
+}
+
+/* Option label text inside .opt (second column) */
+.opt span{
+  font-size: 14px;
+}
 
 /* Buttons */
-.actions { display: flex; gap: 12px; margin: 18px 0; }
-.btn { appearance: none; border: 1px solid #111827; background: #111827; color: #fff; padding: 10px 16px; border-radius: 12px; cursor: pointer; font-weight: 600; }
-.btn:hover { filter: brightness(0.95); }
-.btn.ghost { background: #fff; color: #111827; }
+.btns{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+.btn{
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid color-mix(in oklab, var(--primary) 55%, var(--line));
+  background: linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0)) , var(--primary);
+  color: white;
+  font-weight: 700;
+  letter-spacing: .3px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255,255,255,.2) inset, var(--shadow);
+  transition: transform .06s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+.btn:focus-visible{ outline: none; box-shadow: var(--focus), var(--shadow); }
+
+.btn.ghost{
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--line);
+  box-shadow: var(--shadow-inset);
+}
+.btn.ghost:hover{
+  background: var(--primary-weak);
+  border-color: color-mix(in oklab, var(--primary) 25%, var(--line));
+}
+
+/* Tiny text */
+.tiny{
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 10px;
+}
 
 /* Utilities */
-.tiny { font-size: 12px; color: #555; }
-.hidden { display: none !important; }
+.hidden{ display: none !important; }
 
-/* Result page */
-.result-wrap { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 20px; }
-.result-type { font-size: 26px; margin-bottom: 4px; }
-.badge { display: inline-block; padding: 4px 10px; border-radius: 999px; border: 1px solid #e5e7eb; background: #f3f4f6; font-size: 12px; margin-left: 8px; }
-.kv { margin-top: 10px; font-size: 14px; color: #333; }
-.kv code { background: #f3f4f6; padding: 1px 6px; border-radius: 6px; }
-.btns { display: flex; gap: 10px; margin-top: 16px; }
-.hr { height: 1px; background: #e5e7eb; margin: 16px 0; }
-
-@media (max-width: 520px) {
-  .options { grid-template-columns: 1fr; }
+/* Result pages */
+.result-wrap{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(16px, 2.5vw, 26px);
+  box-shadow: var(--shadow);
 }
+.result-type{
+  font-size: clamp(22px, 2.2vw, 28px);
+  margin: 0 0 6px;
+}
+.badge{
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--primary-weak);
+  font-size: 12px;
+  margin-left: 8px;
+}
+.kv{ margin-top: 10px; font-size: 14px; color: var(--text); }
+.kv code{
+  background: color-mix(in oklab, var(--line) 60%, transparent);
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+.hr{ height: 1px; background: var(--line); margin: 18px 0; }
+
+/* Focus outlines for keyboard users */
+a, button, input, select, textarea{
+  outline-color: var(--primary);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling for internal anchors (if any) */
+html{ scroll-behavior: smooth; }
