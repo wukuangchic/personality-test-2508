@@ -1,0 +1,315 @@
+// Language detection and translation data for index page
+const LANG = (() => {
+  const l = (navigator.language || 'en').toLowerCase();
+  if (l.startsWith('zh')) {
+    return /tw|hk|mo|hant/.test(l) ? 'zh-Hant' : 'zh';
+    }
+  if (l.startsWith('ja')) return 'ja';
+  if (l.startsWith('ko')) return 'ko';
+  if (l.startsWith('fr')) return 'fr';
+  if (l.startsWith('de')) return 'de';
+  if (l.startsWith('ar')) return 'ar';
+  if (l.startsWith('ru')) return 'ru';
+  if (l.startsWith('es')) return 'es';
+  return 'en';
+})();
+
+const UI = {
+  title: {
+    zh: '性格心理测试',
+    'zh-Hant': '性格心理測試',
+    en: 'Personality Test',
+    ja: '性格診断テスト',
+    ko: '성격 심리 테스트',
+    fr: 'Test de personnalité',
+    de: 'Persönlichkeitstest',
+    ar: 'اختبار الشخصية',
+    ru: 'Тест личности',
+    es: 'Prueba de personalidad',
+  },
+  subtitle: {
+    zh: '12 道题 · 约 2 分钟 · 本地计算，无需登录',
+    'zh-Hant': '12 道題 · 約 2 分鐘 · 本地計算，無需登入',
+    en: '12 questions · about 2 minutes · runs locally, no login required',
+    ja: '全12問・約2分・ローカル計算、ログイン不要',
+    ko: '문항 12개 · 약 2분 · 로컬 계산, 로그인 불필요',
+    fr: '12 questions · environ 2 minutes · calcul local, sans connexion',
+    de: '12 Fragen · ca. 2 Minuten · lokale Berechnung, keine Anmeldung erforderlich',
+    ar: '12 سؤالًا · حوالي دقيقتين · يعمل محليًا، لا حاجة لتسجيل الدخول',
+    ru: '12 вопросов · около 2 минут · локальный расчёт, без входа',
+    es: '12 preguntas · aproximadamente 2 minutos · se ejecuta localmente, sin iniciar sesión',
+  },
+  submit: {
+    zh: '提交并查看结果',
+    'zh-Hant': '提交並查看結果',
+    en: 'Submit & View Result',
+    ja: '結果を表示',
+    ko: '제출하고 결과 보기',
+    fr: 'Envoyer et voir le résultat',
+    de: 'Absenden & Ergebnis ansehen',
+    ar: 'إرسال وعرض النتيجة',
+    ru: 'Отправить и посмотреть результат',
+    es: 'Enviar y ver resultado',
+  },
+  reset: {
+    zh: '清空重做',
+    'zh-Hant': '清空重做',
+    en: 'Reset',
+    ja: 'リセット',
+    ko: '초기화',
+    fr: 'Réinitialiser',
+    de: 'Zurücksetzen',
+    ar: 'إعادة تعيين',
+    ru: 'Сбросить',
+    es: 'Reiniciar',
+  },
+  disclaimer: {
+    zh: '* 免责声明：本测试仅供娱乐与自我反思，不构成临床或诊断建议。',
+    'zh-Hant': '* 免責聲明：本測試僅供娛樂與自我反思，不構成臨床或診斷建議。',
+    en: '* Disclaimer: This test is for entertainment and self-reflection only and is not clinical or diagnostic advice.',
+    ja: '* 免責事項：本テストは娯楽と自己省察のみを目的とし、臨床的または診断的な助言ではありません。',
+    ko: '* 면책조항: 본 테스트는 오락 및 자기 성찰 용도로만 사용되며, 임상 또는 진단 조언이 아닙니다.',
+    fr: '* Avertissement : ce test est destiné au divertissement et à l’auto-réflexion uniquement et ne constitue pas un avis clinique ou diagnostique.',
+    de: '* Haftungsausschluss: Dieser Test dient nur der Unterhaltung und Selbstreflexion und stellt keine klinische oder diagnostische Beratung dar.',
+    ar: '* إخلاء المسؤولية: هذا الاختبار للترفيه والتأمل الذاتي فقط ولا يُعد نصيحة طبية أو تشخيصية.',
+    ru: '* Отказ от ответственности: этот тест предназначен только для развлечения и самоанализа и не является клинической или диагностической рекомендацией.',
+    es: '* Aviso: esta prueba es solo para entretenimiento y auto-reflexión y no constituye consejo clínico ni diagnóstico.',
+  },
+  legend: {
+    zh: n => `第 ${n} 题`,
+    'zh-Hant': n => `第 ${n} 題`,
+    en: n => `Question ${n}`,
+    ja: n => `${n}問目`,
+    ko: n => `${n}번 문제`,
+    fr: n => `Question ${n}`,
+    de: n => `Frage ${n}`,
+    ar: n => `السؤال ${n}`,
+    ru: n => `Вопрос ${n}`,
+    es: n => `Pregunta ${n}`,
+  },
+  unfinished: {
+    zh: n => `还有题目未作答（第 ${n} 题）`,
+    'zh-Hant': n => `還有題目未作答（第 ${n} 題）`,
+    en: n => `Question ${n} is unanswered.`,
+    ja: n => `${n}問目が未回答です。`,
+    ko: n => `${n}번 문항이 답변되지 않았습니다.`,
+    fr: n => `La question ${n} n’est pas remplie.`,
+    de: n => `Frage ${n} ist unbeantwortet.`,
+    ar: n => `السؤال ${n} لم يتم الإجابة عليه.`,
+    ru: n => `Вопрос ${n} не отвечен.`,
+    es: n => `La pregunta ${n} no está respondida.`,
+  },
+  copyright: {
+    zh: '© 2025 Psychotest',
+    'zh-Hant': '© 2025 Psychotest',
+    en: '© 2025 Psychotest',
+    ja: '© 2025 Psychotest',
+    ko: '© 2025 Psychotest',
+    fr: '© 2025 Psychotest',
+    de: '© 2025 Psychotest',
+    ar: '© 2025 Psychotest',
+    ru: '© 2025 Psychotest',
+    es: '© 2025 Psychotest',
+  },
+};
+
+const DIM_ORDER = ['connector', 'explorer', 'organizer', 'analyst'];
+
+const QUESTIONS = [
+  // connector ×3
+  {
+    text: {
+      zh: '在新的社交场合里，你通常能很快破冰并与人建立联系。',
+      'zh-Hant': '在新的社交場合裡，你通常能很快破冰並與人建立連結。',
+      en: 'In new social settings, you can quickly break the ice and connect with others.',
+      ja: '新しい社交の場で、あなたはすばやく打ち解けて他人とつながることができる。',
+      ko: '새로운 사회적 상황에서 당신은 빠르게 어색함을 깨고 사람들과 연결될 수 있다.',
+      fr: 'Dans un nouvel environnement social, vous brisez rapidement la glace et vous liez aux autres.',
+      de: 'In neuen sozialen Situationen kannst du schnell das Eis brechen und Kontakte knüpfen.',
+      ar: 'في المواقف الاجتماعية الجديدة، يمكنك كسر الجليد بسرعة وبناء علاقات مع الآخرين.',
+      ru: 'В новых социальных ситуациях вы быстро находите общий язык и устанавливаете связи с другими.',
+      es: 'En nuevos entornos sociales, puedes romper el hielo rápidamente y conectar con los demás.',
+    },
+    dim: 'connector',
+  },
+  {
+    text: {
+      zh: '遇到问题时，你更愿意和别人讨论，而不是独自思考。',
+      'zh-Hant': '遇到問題時，你更願意和別人討論，而不是獨自思考。',
+      en: 'When facing problems, you prefer discussing with others rather than thinking alone.',
+      ja: '問題に直面したとき、独りで考えるよりも他人と話し合うことを好む。',
+      ko: '문제에 직면하면 혼자 고민하기보다 다른 사람과 토론하는 것을 선호한다.',
+      fr: 'Face à un problème, vous préférez en discuter avec d’autres plutôt que de réfléchir seul.',
+      de: 'Wenn du vor Problemen stehst, diskutierst du lieber mit anderen, statt allein nachzudenken.',
+      ar: 'عندما تواجه مشكلة، تفضّل مناقشتها مع الآخرين بدلاً من التفكير وحدك.',
+      ru: 'Столкнувшись с проблемой, вы предпочитаете обсудить её с другими, а не думать в одиночку.',
+      es: 'Cuando enfrentas problemas, prefieres discutirlos con otros en lugar de pensar solo.',
+    },
+    dim: 'connector',
+  },
+  {
+    text: {
+      zh: '你喜欢在群聊或会议中主动发起话题。',
+      'zh-Hant': '你喜歡在群聊或會議中主動發起話題。',
+      en: 'You like to initiate topics in group chats or meetings.',
+      ja: 'グループチャットや会議で積極的に話題を振るのが好きだ。',
+      ko: '단체 채팅이나 회의에서 주제를 먼저 꺼내는 것을 좋아한다.',
+      fr: 'Vous aimez lancer des sujets dans les discussions de groupe ou les réunions.',
+      de: 'In Gruppenchats oder Besprechungen bringst du gerne Themen ein.',
+      ar: 'تحب أن تبدأ المواضيع في الدردشات الجماعية أو الاجتماعات.',
+      ru: 'В групповых чатах или на встречах вам нравится начинать обсуждения.',
+      es: 'Te gusta iniciar temas en los chats grupales o reuniones.',
+    },
+    dim: 'connector',
+  },
+
+  // explorer ×3
+  {
+    text: {
+      zh: '你享受尝试全新的工具、方法或路径。',
+      'zh-Hant': '你享受嘗試全新的工具、方法或路徑。',
+      en: 'You enjoy trying completely new tools, methods, or paths.',
+      ja: 'まったく新しいツールや方法、道を試すのを楽しむ。',
+      ko: '완전히 새로운 도구, 방법, 또는 길을 시도하는 것을 즐긴다.',
+      fr: 'Vous aimez essayer des outils, méthodes ou chemins totalement nouveaux.',
+      de: 'Du probierst gern völlig neue Werkzeuge, Methoden oder Wege aus.',
+      ar: 'تستمتع بتجربة أدوات أو طرق أو مسارات جديدة تمامًا.',
+      ru: 'Вы с удовольствием пробуете совершенно новые инструменты, методы или пути.',
+      es: 'Disfrutas probar herramientas, métodos o caminos completamente nuevos.',
+    },
+    dim: 'explorer',
+  },
+  {
+    text: {
+      zh: '面对未知或变化，你更多是兴奋而不是焦虑。',
+      'zh-Hant': '面對未知或變化，你更多是興奮而不是焦慮。',
+      en: 'When facing the unknown or change, you feel more excited than anxious.',
+      ja: '未知や変化に直面したとき、不安よりもワクワクする。',
+      ko: '미지나 변화에 직면하면 불안보다 기대감이 더 크다.',
+      fr: 'Face à l’inconnu ou au changement, vous ressentez plus d’excitation que d’anxiété.',
+      de: 'Wenn du dem Unbekannten oder Veränderungen begegnest, bist du eher aufgeregt als ängstlich.',
+      ar: 'عندما تواجه المجهول أو التغيير، تشعر بالحماس أكثر من القلق.',
+      ru: 'Столкнувшись с неизвестностью или переменами, вы больше возбуждены, чем обеспокоены.',
+      es: 'Cuando te enfrentas a lo desconocido o a cambios, sientes más emoción que ansiedad.',
+    },
+    dim: 'explorer',
+  },
+  {
+    text: {
+      zh: '你喜欢临时起意的安排，例如说走就走的小旅行。',
+      'zh-Hant': '你喜歡臨時起意的安排，例如說走就走的小旅行。',
+      en: 'You enjoy spur-of-the-moment plans, like spontaneous trips.',
+      ja: '思いつきでの計画、例えば衝動的な小旅行などを楽しむ。',
+      ko: '충동적으로 떠나는 여행처럼 즉흥적인 계획을 즐긴다.',
+      fr: 'Vous appréciez les plans improvisés, comme les voyages spontanés.',
+      de: 'Du magst spontane Pläne, etwa eine kurzfristige Reise.',
+      ar: 'تستمتع بالخطط المفاجئة، مثل الرحلات العفوية.',
+      ru: 'Вам нравятся спонтанные планы, например, внезапные поездки.',
+      es: 'Disfrutas de planes espontáneos, como viajes improvisados.',
+    },
+    dim: 'explorer',
+  },
+
+  // organizer ×3
+  {
+    text: {
+      zh: '你会把待办事项拆解并安排到日程里逐一推进。',
+      'zh-Hant': '你會把待辦事項拆解並安排到日程裡逐一推進。',
+      en: 'You break down to-do items and schedule them step by step.',
+      ja: 'やるべきことを細分化し、スケジュールに沿って一つずつ進める。',
+      ko: '할 일을 세분화하여 일정에 맞춰 하나씩 진행한다.',
+      fr: 'Vous décomposez les tâches à faire et les planifiez étape par étape.',
+      de: 'Du zerlegst Aufgaben und planst sie Schritt für Schritt.',
+      ar: 'تقسّم المهام وتجدولها خطوة بخطوة.',
+      ru: 'Вы разбиваете задачи на этапы и планируете их шаг за шагом.',
+      es: 'Desglosas las tareas y las programas paso a paso.',
+    },
+    dim: 'organizer',
+  },
+  {
+    text: {
+      zh: '你更倾向于按计划一步步执行项目，少走捷径。',
+      'zh-Hant': '你更傾向於按計劃一步步執行項目，少走捷徑。',
+      en: 'You tend to follow plans step by step, avoiding shortcuts.',
+      ja: '近道を避け、計画に沿って一歩ずつ進める傾向がある。',
+      ko: '지름길을 피하고 계획대로 한 단계씩 진행하는 편이다.',
+      fr: 'Vous avez tendance à suivre les plans étape par étape, en évitant les raccourcis.',
+      de: 'Du neigst dazu, Pläne Schritt für Schritt umzusetzen und Abkürzungen zu vermeiden.',
+      ar: 'تميل إلى تنفيذ الخطط خطوة بخطوة، متجنبًا الطرق المختصرة.',
+      ru: 'Вы склонны следовать плану шаг за шагом, избегая коротких путей.',
+      es: 'Tiendes a seguir los planes paso a paso, evitando atajos.',
+    },
+    dim: 'organizer',
+  },
+  {
+    text: {
+      zh: '临时改计划会让你不适，甚至有些反感。',
+      'zh-Hant': '臨時改計劃會讓你不適，甚至有些反感。',
+      en: 'Last-minute changes to plans make you uncomfortable or even resentful.',
+      ja: '直前の計画変更は不快、場合によっては反感を覚える。',
+      ko: '계획이 갑자기 바뀌면 불편하거나 심지어 불쾌해진다.',
+      fr: 'Les changements de plan de dernière minute vous mettent mal à l’aise, voire vous agacent.',
+      de: 'Spontane Planänderungen sind dir unangenehm, manchmal sogar lästig.',
+      ar: 'التغييرات المفاجئة في الخطة تجعلك غير مرتاح أو حتى منزعجًا.',
+      ru: 'Внезапные изменения планов вызывают у вас дискомфорт или даже раздражение.',
+      es: 'Los cambios de planes de última hora te incomodan o incluso te molestan.',
+    },
+    dim: 'organizer',
+  },
+
+  // analyst ×3
+  {
+    text: {
+      zh: '做重要决策前，你会先收集尽可能多的事实和数据。',
+      'zh-Hant': '做重要決策前，你會先收集盡可能多的事實和數據。',
+      en: 'Before making important decisions, you gather as many facts and data as possible.',
+      ja: '重要な決断を下す前に、できるだけ多くの事実とデータを集める。',
+      ko: '중요한 결정을 내리기 전에 가능한 많은 사실과 데이터를 수집한다.',
+      fr: 'Avant de prendre une décision importante, vous rassemblez autant de faits et de données que possible.',
+      de: 'Bevor du wichtige Entscheidungen triffst, sammelst du so viele Fakten und Daten wie möglich.',
+      ar: 'قبل اتخاذ قرارات مهمة، تجمع أكبر قدر ممكن من الحقائق والبيانات.',
+      ru: 'Прежде чем принять важное решение, вы собираете как можно больше фактов и данных.',
+      es: 'Antes de tomar decisiones importantes, recopilas tantos hechos y datos como sea posible.',
+    },
+    dim: 'analyst',
+  },
+  {
+    text: {
+      zh: '你常用图表或数据来阐述观点。',
+      'zh-Hant': '你常用圖表或數據來闡述觀點。',
+      en: 'You often use charts or data to explain your ideas.',
+      ja: '考えを説明するために、よくグラフやデータを用いる。',
+      ko: '생각을 설명할 때 차트나 데이터를 자주 활용한다.',
+      fr: 'Vous utilisez souvent des graphiques ou des données pour expliquer vos idées.',
+      de: 'Du nutzt häufig Diagramme oder Daten, um deine Ideen zu erklären.',
+      ar: 'غالبًا ما تستخدم الرسوم البيانية أو البيانات لشرح أفكارك.',
+      ru: 'Вы часто используете графики или данные, чтобы объяснить свои идеи.',
+      es: 'A menudo usas gráficos o datos para explicar tus ideas.',
+    },
+    dim: 'analyst',
+  },
+  {
+    text: {
+      zh: '对于未经验证的结论，你会保持质疑并寻求证据。',
+      'zh-Hant': '對於未經驗證的結論，你會保持質疑並尋求證據。',
+      en: 'You remain skeptical of unverified conclusions and seek evidence.',
+      ja: '裏付けのない結論には懐疑的で、証拠を求める。',
+      ko: '검증되지 않은 결론에 회의적이며 증거를 찾는다.',
+      fr: 'Vous restez sceptique face aux conclusions non vérifiées et recherchez des preuves.',
+      de: 'Unbestätigten Schlussfolgerungen stehst du skeptisch gegenüber und suchst nach Beweisen.',
+      ar: 'تبقى متشككًا في الاستنتاجات غير المثبتة وتبحث عن الأدلة.',
+      ru: 'Вы скептически относитесь к непроверенным выводам и ищете доказательства.',
+      es: 'Te mantienes escéptico ante conclusiones no verificadas y buscas evidencia.',
+    },
+    dim: 'analyst',
+  },
+];
+
+const LIKERT = [
+  { value: 1, label: { zh: '非常不同意', 'zh-Hant': '非常不同意', en: 'Strongly disagree', ja: 'まったくそう思わない', ko: '전혀 동의하지 않음', fr: 'Tout à fait en désaccord', de: 'Stimme überhaupt nicht zu', ar: 'أعارض بشدة', ru: 'Совершенно не согласен', es: 'Totalmente en desacuerdo' } },
+  { value: 2, label: { zh: '不同意', 'zh-Hant': '不同意', en: 'Disagree', ja: 'そう思わない', ko: '동의하지 않음', fr: 'Pas d’accord', de: 'Stimme nicht zu', ar: 'أعارض', ru: 'Не согласен', es: 'En desacuerdo' } },
+  { value: 3, label: { zh: '一般', 'zh-Hant': '一般', en: 'Neutral', ja: 'どちらでもない', ko: '보통', fr: 'Neutre', de: 'Neutral', ar: 'محايد', ru: 'Нейтрально', es: 'Neutral' } },
+  { value: 4, label: { zh: '同意', 'zh-Hant': '同意', en: 'Agree', ja: 'そう思う', ko: '동의함', fr: 'D’accord', de: 'Stimme zu', ar: 'أوافق', ru: 'Согласен', es: 'De acuerdo' } },
+  { value: 5, label: { zh: '非常同意', 'zh-Hant': '非常同意', en: 'Strongly agree', ja: 'とてもそう思う', ko: '매우 동의함', fr: 'Tout à fait d’accord', de: 'Stimme voll zu', ar: 'أوافق بشدة', ru: 'Полностью согласен', es: 'Totalmente de acuerdo' } },
+];
+
