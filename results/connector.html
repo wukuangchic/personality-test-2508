@@ -43,57 +43,9 @@
     <p>© 2025 Psychotest · 本测试仅供娱乐与自我反思。</p>
   </footer>
 
+  <script src="../results.js"></script>
   <script>
-const LANG = navigator.language && navigator.language.startsWith('en') ? 'en' : 'zh';
-document.documentElement.lang = LANG;
-
-if (LANG === 'en') {
-  document.title = 'Connector (Social-Driven) | Test Result';
-  document.querySelector('h1').textContent = 'Your Result';
-  document.querySelector('.result-type').innerHTML = 'Connector (Social-Driven)<span class="badge">Non-clinical · For fun</span>';
-  document.querySelector('.kv').innerHTML = 'Type code: <code>connector</code>';
-  document.querySelectorAll('h3')[0].textContent = 'Your Strengths';
-  document.querySelectorAll('ul')[0].innerHTML = '<li>Great at communication and collaboration, quickly building trust and rapport.</li><li>Empowers others in the team, facilitating information flow and consensus.</li><li>Skilled at integrating resources and driving cross-department projects.</li>';
-  document.querySelectorAll('h3')[1].textContent = 'Tips for You';
-  document.querySelectorAll('ul')[1].innerHTML = '<li>Use checklists and rhythms for complex tasks to avoid "talking more, doing less".</li><li>Learn to politely decline low-priority requests to protect deep work time.</li><li>Partner with "Analysts" to support ideas with data and increase persuasiveness.</li>';
-  document.querySelectorAll('h3')[2].textContent = 'Scores in Each Dimension';
-  document.getElementById('scores').textContent = 'Loading...';
-  document.querySelector('.btns a').textContent = 'Take Again';
-  document.getElementById('copyBtn').textContent = 'Copy Result Link';
-  document.querySelector('footer p').textContent = '© 2025 Psychotest · This test is for entertainment and self-reflection.';
-}
-
-(function () {
-  const p = new URLSearchParams(location.search);
-  const a = Number(p.get('analyst') || 0);
-  const e = Number(p.get('explorer') || 0);
-  const o = Number(p.get('organizer') || 0);
-  const c = Number(p.get('connector') || 0);
-  const labels = LANG === 'en'
-    ? { connector: 'Connector', explorer: 'Explorer', organizer: 'Organizer', analyst: 'Analyst' }
-    : { connector: '连接者', explorer: '探索者', organizer: '组织者', analyst: '分析者' };
-  const scores = [
-    [labels.connector, c],
-    [labels.explorer, e],
-    [labels.organizer, o],
-    [labels.analyst, a],
-  ];
-  const total = a + e + o + c;
-  const sep = LANG === 'en' ? ' | ' : ' ｜ ';
-  const colon = LANG === 'en' ? ': ' : '：';
-  const totalLabel = LANG === 'en' ? 'Total: ' : '总分：';
-  const parts = scores.map(([k, v]) => k + colon + v).join(sep);
-  document.getElementById('scores').textContent = parts + (total ? sep + totalLabel + total : '');
-})();
-
-document.getElementById('copyBtn').addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(location.href);
-    alert(LANG === 'en' ? 'Link copied.' : '已复制当前结果链接');
-  } catch (err) {
-    alert(LANG === 'en' ? 'Copy failed, please copy link manually' : '复制失败，请手动复制地址栏链接');
-  }
-});
+    initResult('connector');
   </script>
 </body>
 </html>
