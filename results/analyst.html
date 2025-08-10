@@ -44,31 +44,54 @@
   </footer>
 
   <script>
-// 读取 query 分数并展示
+const LANG = navigator.language && navigator.language.startsWith('en') ? 'en' : 'zh';
+document.documentElement.lang = LANG;
+
+if (LANG === 'en') {
+  document.title = 'Analyst (Data-Driven) | Test Result';
+  document.querySelector('h1').textContent = 'Your Result';
+  document.querySelector('.result-type').innerHTML = 'Analyst (Data-Driven)<span class="badge">Non-clinical · For fun</span>';
+  document.querySelector('.kv').innerHTML = 'Type code: <code>analyst</code>';
+  document.querySelectorAll('h3')[0].textContent = 'Your Strengths';
+  document.querySelectorAll('ul')[0].innerHTML = '<li>Evidence-oriented, with rigorous reasoning and sound judgment.</li><li>Skilled at using models and data to reveal core issues.</li><li>Good at building evaluation systems and optimizing continuously.</li>';
+  document.querySelectorAll('h3')[1].textContent = 'Tips for You';
+  document.querySelectorAll('ul')[1].innerHTML = '<li>Beware of "analysis paralysis"; set clear decision points.</li><li>Co-create with business partners to ensure reports lead to action.</li><li>Collaborate with "Connectors" to translate insights into accessible, actionable language.</li>';
+  document.querySelectorAll('h3')[2].textContent = 'Scores in Each Dimension';
+  document.getElementById('scores').textContent = 'Loading...';
+  document.querySelector('.btns a').textContent = 'Take Again';
+  document.getElementById('copyBtn').textContent = 'Copy Result Link';
+  document.querySelector('footer p').textContent = '© 2025 Psychotest · This test is for entertainment and self-reflection.';
+}
+
 (function () {
   const p = new URLSearchParams(location.search);
-  const a = Number(p.get("analyst")||0);
-  const e = Number(p.get("explorer")||0);
-  const o = Number(p.get("organizer")||0);
-  const c = Number(p.get("connector")||0);
+  const a = Number(p.get('analyst') || 0);
+  const e = Number(p.get('explorer') || 0);
+  const o = Number(p.get('organizer') || 0);
+  const c = Number(p.get('connector') || 0);
+  const labels = LANG === 'en'
+    ? { connector: 'Connector', explorer: 'Explorer', organizer: 'Organizer', analyst: 'Analyst' }
+    : { connector: '连接者', explorer: '探索者', organizer: '组织者', analyst: '分析者' };
   const scores = [
-    ["连接者 connector", c],
-    ["探索者 explorer", e],
-    ["组织者 organizer", o],
-    ["分析者 analyst", a],
+    [labels.connector, c],
+    [labels.explorer, e],
+    [labels.organizer, o],
+    [labels.analyst, a],
   ];
   const total = a + e + o + c;
-  const parts = scores.map(([k,v]) => k + "：" + v).join(" ｜ ");
-  document.getElementById("scores").textContent = parts + (total ? " ｜ 总分：" + total : "");
+  const sep = LANG === 'en' ? ' | ' : ' ｜ ';
+  const colon = LANG === 'en' ? ': ' : '：';
+  const totalLabel = LANG === 'en' ? 'Total: ' : '总分：';
+  const parts = scores.map(([k, v]) => k + colon + v).join(sep);
+  document.getElementById('scores').textContent = parts + (total ? sep + totalLabel + total : '');
 })();
 
-// 复制链接
-document.getElementById("copyBtn").addEventListener("click", async () => {
+document.getElementById('copyBtn').addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(location.href);
-    alert("已复制当前结果链接");
+    alert(LANG === 'en' ? 'Link copied.' : '已复制当前结果链接');
   } catch (err) {
-    alert("复制失败，请手动复制地址栏链接");
+    alert(LANG === 'en' ? 'Copy failed, please copy link manually' : '复制失败，请手动复制地址栏链接');
   }
 });
   </script>
