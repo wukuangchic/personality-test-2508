@@ -7,39 +7,39 @@
 =========================================================================== */
 
 :root{
-  --bg: #f7f8fc;
+  --bg: linear-gradient(135deg, #fff0f5 0%, #ffe5ec 100%);
   --card: #ffffff;
-  --text: #1e293b;
-  --muted: #64748b;
-  --line: #e2e8f0;
-  --primary: #3b82f6;        /* blue-500 */
-  --primary-weak: #e0f2fe;   /* sky-100 */
-  --primary-weak-2:#dbeafe;  /* blue-100 */
-  --accent: #10b981;         /* green-500 */
-  --danger: #ef4444;         /* red-500 */
+  --text: #5b1e42;
+  --muted: #a06a80;
+  --line: #ffd6e7;
+  --primary: #ff8fab;
+  --primary-weak: #ffe5ec;
+  --primary-weak-2:#ffc8dd;
+  --accent: #cdb4db;
+  --danger: #ff6f91;
   --radius-lg: 20px;
   --radius-md: 12px;
   --radius-sm: 10px;
-  --shadow: 0 6px 24px rgba(15, 23, 42, .08);
+  --shadow: 0 6px 24px rgba(91, 30, 66, .08);
   --shadow-inset: inset 0 0 0 1px var(--line);
-  --focus: 0 0 0 3px rgba(59,130,246,.35);
+  --focus: 0 0 0 3px rgba(255,143,171,.35);
 }
 
 @media (prefers-color-scheme: dark){
   :root{
-    --bg: #0b1220;
-    --card: #0f172a;
-    --text: #e5e7eb;
-    --muted: #94a3b8;
-    --line: #1f2937;
-    --primary: #60a5fa;      /* blue-400 */
-    --primary-weak: #0b2942; /* deep sky */
-    --primary-weak-2:#1e3a5f;
-    --accent: #34d399;
-    --danger: #f87171;
+    --bg: linear-gradient(135deg, #2d0b45 0%, #451952 100%);
+    --card: #2f184b;
+    --text: #ffe4f3;
+    --muted: #d8b4e2;
+    --line: #3a254f;
+    --primary: #ff8fab;
+    --primary-weak: #5e2751;
+    --primary-weak-2:#7a316f;
+    --accent: #fbcfe8;
+    --danger: #ff6f91;
     --shadow: 0 10px 28px rgba(0,0,0,.40);
     --shadow-inset: inset 0 0 0 1px var(--line);
-    --focus: 0 0 0 3px rgba(96,165,250,.45);
+    --focus: 0 0 0 3px rgba(255,143,171,.45);
   }
 }
 
@@ -48,7 +48,7 @@
 html, body{ margin:0; padding:0; }
 html{ -webkit-text-size-adjust:100%; }
 body{
-  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: 'Comic Sans MS', 'Comic Neue', ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
                "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",
                "Noto Sans TC","Noto Sans JP","Noto Sans KR","Noto Naskh Arabic",
                "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -64,13 +64,17 @@ body{
 header.container{
   text-align: center;
   padding: 56px 20px 22px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 2px dashed var(--primary);
+  background: var(--primary-weak);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 header h1{
   margin: 0 0 8px;
   font-size: clamp(32px, 3.6vw, 42px);
   font-weight: 800;
   letter-spacing: .4px;
+  color: var(--primary);
+  text-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 .sub{
   margin: 0;
@@ -183,7 +187,7 @@ legend{
 .btn:focus-visible{ outline: none; box-shadow: var(--focus), var(--shadow); }
 
 .btn:not(.ghost){
-  background: linear-gradient(90deg, var(--primary), #2563eb);
+  background: linear-gradient(90deg, var(--primary), #ff5d8f);
   color: #fff;
 }
 .btn.ghost{
@@ -195,7 +199,12 @@ legend{
 .btn.ghost:hover{
   background: var(--primary-weak);
   color: var(--primary);
-  border-color: #bfdbfe;
+  border-color: #ffc8dd;
+}
+
+.emoji{
+  margin-left: 6px;
+  display: inline-block;
 }
 
 /* ===== Tiny text & footer ===== */
