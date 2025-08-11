@@ -10,6 +10,7 @@ const LANG = (() => {
   if (l.startsWith('de')) return 'de';
   if (l.startsWith('ar')) return 'ar';
   if (l.startsWith('ru')) return 'ru';
+  if (l.startsWith('it')) return 'it';
   if (l.startsWith('es')) return 'es';
   return 'en';
 })();
@@ -26,6 +27,7 @@ const UI = {
     ar: 'اختبار الشخصية',
     ru: 'Тест личности',
     es: 'Prueba de personalidad',
+    it: 'Test di personalità',
   },
   subtitle: {
     zh: '12 道题 · 约 2 分钟 · 本地计算，无需登录',
@@ -38,6 +40,7 @@ const UI = {
     ar: '12 سؤالًا · حوالي دقيقتين · يعمل محليًا، لا حاجة لتسجيل الدخول',
     ru: '12 вопросов · около 2 минут · локальный расчёт, без входа',
     es: '12 preguntas · aproximadamente 2 minutos · se ejecuta localmente, sin iniciar sesión',
+    it: '12 domande · circa 2 minuti · esecuzione locale, nessun accesso richiesto',
   },
   submit: {
     zh: '提交并查看结果',
@@ -50,6 +53,7 @@ const UI = {
     ar: 'إرسال وعرض النتيجة',
     ru: 'Отправить и посмотреть результат',
     es: 'Enviar y ver resultado',
+    it: 'Invia e visualizza il risultato',
   },
   reset: {
     zh: '清空重做',
@@ -62,6 +66,7 @@ const UI = {
     ar: 'إعادة تعيين',
     ru: 'Сбросить',
     es: 'Reiniciar',
+    it: 'Reimposta',
   },
   privacy: {
     zh: '隐私政策',
@@ -74,6 +79,7 @@ const UI = {
     ar: 'سياسة الخصوصية',
     ru: 'Политика конфиденциальности',
     es: 'Política de privacidad',
+    it: 'Informativa sulla privacy',
   },
   terms: {
     zh: '服务条款',
@@ -86,6 +92,7 @@ const UI = {
     ar: 'شروط الخدمة',
     ru: 'Условия использования',
     es: 'Términos del servicio',
+    it: 'Termini di servizio',
   },
   disclaimer: {
     zh: '* 免责声明：本测试仅供娱乐与自我反思，不构成临床或诊断建议。',
@@ -98,6 +105,7 @@ const UI = {
     ar: '* إخلاء المسؤولية: هذا الاختبار للترفيه والتأمل الذاتي فقط ولا يُعد نصيحة طبية أو تشخيصية.',
     ru: '* Отказ от ответственности: этот тест предназначен только для развлечения и самоанализа и не является клинической или диагностической рекомендацией.',
     es: '* Aviso: esta prueba es solo para entretenimiento y auto-reflexión y no constituye consejo clínico ni diagnóstico.',
+    it: '* Dichiarazione: questo test è solo per intrattenimento e auto-riflessione e non costituisce un consiglio clinico o diagnostico.',
   },
   legend: {
     zh: n => `第 ${n} 题`,
@@ -110,6 +118,7 @@ const UI = {
     ar: n => `السؤال ${n}`,
     ru: n => `Вопрос ${n}`,
     es: n => `Pregunta ${n}`,
+    it: n => `Domanda ${n}`,
   },
   unfinished: {
     zh: n => `还有题目未作答（第 ${n} 题）`,
@@ -122,6 +131,7 @@ const UI = {
     ar: n => `السؤال ${n} لم يتم الإجابة عليه.`,
     ru: n => `Вопрос ${n} не отвечен.`,
     es: n => `La pregunta ${n} no está respondida.`,
+    it: n => `La domanda ${n} non è stata completata.`,
   },
   copyright: {
     zh: '© 2025 Psychotest',
@@ -134,6 +144,7 @@ const UI = {
     ar: '© 2025 Psychotest',
     ru: '© 2025 Psychotest',
     es: '© 2025 Psychotest',
+    it: '© 2025 Psychotest',
   },
 };
 
@@ -153,6 +164,7 @@ const QUESTIONS = [
       ar: 'في المواقف الاجتماعية الجديدة، يمكنك كسر الجليد بسرعة وبناء علاقات مع الآخرين.',
       ru: 'В новых социальных ситуациях вы быстро находите общий язык и устанавливаете связи с другими.',
       es: 'En nuevos entornos sociales, puedes romper el hielo rápidamente y conectar con los demás.',
+      it: 'In nuovi contesti sociali riesci a rompere il ghiaccio rapidamente e a connetterti con gli altri.',
     },
     dim: 'connector',
   },
@@ -168,6 +180,7 @@ const QUESTIONS = [
       ar: 'عندما تواجه مشكلة، تفضّل مناقشتها مع الآخرين بدلاً من التفكير وحدك.',
       ru: 'Столкнувшись с проблемой, вы предпочитаете обсудить её с другими, а не думать в одиночку.',
       es: 'Cuando enfrentas problemas, prefieres discutirlos con otros en lugar de pensar solo.',
+      it: 'Quando affronti un problema preferisci discuterne con gli altri piuttosto che riflettere da solo.',
     },
     dim: 'connector',
   },
@@ -183,6 +196,7 @@ const QUESTIONS = [
       ar: 'تحب أن تبدأ المواضيع في الدردشات الجماعية أو الاجتماعات.',
       ru: 'В групповых чатах или на встречах вам нравится начинать обсуждения.',
       es: 'Te gusta iniciar temas en los chats grupales o reuniones.',
+      it: 'Ti piace avviare argomenti nelle chat di gruppo o nelle riunioni.',
     },
     dim: 'connector',
   },
@@ -200,6 +214,7 @@ const QUESTIONS = [
       ar: 'تستمتع بتجربة أدوات أو طرق أو مسارات جديدة تمامًا.',
       ru: 'Вы с удовольствием пробуете совершенно новые инструменты, методы или пути.',
       es: 'Disfrutas probar herramientas, métodos o caminos completamente nuevos.',
+      it: 'Ti piace provare strumenti, metodi o percorsi completamente nuovi.',
     },
     dim: 'explorer',
   },
@@ -215,6 +230,7 @@ const QUESTIONS = [
       ar: 'عندما تواجه المجهول أو التغيير، تشعر بالحماس أكثر من القلق.',
       ru: 'Столкнувшись с неизвестностью или переменами, вы больше возбуждены, чем обеспокоены.',
       es: 'Cuando te enfrentas a lo desconocido o a cambios, sientes más emoción que ansiedad.',
+      it: "Di fronte all'ignoto o ai cambiamenti ti senti più eccitato che ansioso.",
     },
     dim: 'explorer',
   },
@@ -230,6 +246,7 @@ const QUESTIONS = [
       ar: 'تستمتع بالخطط المفاجئة، مثل الرحلات العفوية.',
       ru: 'Вам нравятся спонтанные планы, например, внезапные поездки.',
       es: 'Disfrutas de planes espontáneos, como viajes improvisados.',
+      it: 'Ti divertono i piani improvvisati, come i viaggi spontanei.',
     },
     dim: 'explorer',
   },
@@ -247,6 +264,7 @@ const QUESTIONS = [
       ar: 'تقسّم المهام وتجدولها خطوة بخطوة.',
       ru: 'Вы разбиваете задачи на этапы и планируете их шаг за шагом.',
       es: 'Desglosas las tareas y las programas paso a paso.',
+      it: 'Scomponi le cose da fare e le pianifichi passo dopo passo.',
     },
     dim: 'organizer',
   },
@@ -262,6 +280,7 @@ const QUESTIONS = [
       ar: 'تميل إلى تنفيذ الخطط خطوة بخطوة، متجنبًا الطرق المختصرة.',
       ru: 'Вы склонны следовать плану шаг за шагом, избегая коротких путей.',
       es: 'Tiendes a seguir los planes paso a paso, evitando atajos.',
+      it: 'Tendi a seguire i piani passo dopo passo, evitando scorciatoie.',
     },
     dim: 'organizer',
   },
@@ -277,6 +296,7 @@ const QUESTIONS = [
       ar: 'التغييرات المفاجئة في الخطة تجعلك غير مرتاح أو حتى منزعجًا.',
       ru: 'Внезапные изменения планов вызывают у вас дискомфорт или даже раздражение.',
       es: 'Los cambios de planes de última hora te incomodan o incluso te molestan.',
+      it: "Le modifiche dell'ultimo minuto ai piani ti mettono a disagio o ti infastidiscono.",
     },
     dim: 'organizer',
   },
@@ -294,6 +314,7 @@ const QUESTIONS = [
       ar: 'قبل اتخاذ قرارات مهمة، تجمع أكبر قدر ممكن من الحقائق والبيانات.',
       ru: 'Прежде чем принять важное решение, вы собираете как можно больше фактов и данных.',
       es: 'Antes de tomar decisiones importantes, recopilas tantos hechos y datos como sea posible.',
+      it: 'Prima di prendere decisioni importanti raccogli quante più informazioni e dati possibile.',
     },
     dim: 'analyst',
   },
@@ -309,6 +330,7 @@ const QUESTIONS = [
       ar: 'غالبًا ما تستخدم الرسوم البيانية أو البيانات لشرح أفكارك.',
       ru: 'Вы часто используете графики или данные, чтобы объяснить свои идеи.',
       es: 'A menudo usas gráficos o datos para explicar tus ideas.',
+      it: 'Usi spesso grafici o dati per spiegare le tue idee.',
     },
     dim: 'analyst',
   },
@@ -324,16 +346,17 @@ const QUESTIONS = [
       ar: 'تبقى متشككًا في الاستنتاجات غير المثبتة وتبحث عن الأدلة.',
       ru: 'Вы скептически относитесь к непроверенным выводам и ищете доказательства.',
       es: 'Te mantienes escéptico ante conclusiones no verificadas y buscas evidencia.',
+      it: 'Rimani scettico di fronte a conclusioni non verificate e cerchi prove.',
     },
     dim: 'analyst',
   },
 ];
 
 const LIKERT = [
-  { value: 1, label: { zh: '非常不同意', 'zh-Hant': '非常不同意', en: 'Strongly disagree', ja: 'まったくそう思わない', ko: '전혀 동의하지 않음', fr: 'Tout à fait en désaccord', de: 'Stimme überhaupt nicht zu', ar: 'أعارض بشدة', ru: 'Совершенно не согласен', es: 'Totalmente en desacuerdo' } },
-  { value: 2, label: { zh: '不同意', 'zh-Hant': '不同意', en: 'Disagree', ja: 'そう思わない', ko: '동의하지 않음', fr: 'Pas d’accord', de: 'Stimme nicht zu', ar: 'أعارض', ru: 'Не согласен', es: 'En desacuerdo' } },
-  { value: 3, label: { zh: '一般', 'zh-Hant': '一般', en: 'Neutral', ja: 'どちらでもない', ko: '보통', fr: 'Neutre', de: 'Neutral', ar: 'محايد', ru: 'Нейтрально', es: 'Neutral' } },
-  { value: 4, label: { zh: '同意', 'zh-Hant': '同意', en: 'Agree', ja: 'そう思う', ko: '동의함', fr: 'D’accord', de: 'Stimme zu', ar: 'أوافق', ru: 'Согласен', es: 'De acuerdo' } },
-  { value: 5, label: { zh: '非常同意', 'zh-Hant': '非常同意', en: 'Strongly agree', ja: 'とてもそう思う', ko: '매우 동의함', fr: 'Tout à fait d’accord', de: 'Stimme voll zu', ar: 'أوافق بشدة', ru: 'Полностью согласен', es: 'Totalmente de acuerdo' } },
+  { value: 1, label: { zh: '非常不同意', 'zh-Hant': '非常不同意', en: 'Strongly disagree', ja: 'まったくそう思わない', ko: '전혀 동의하지 않음', fr: 'Tout à fait en désaccord', de: 'Stimme überhaupt nicht zu', ar: 'أعارض بشدة', ru: 'Совершенно не согласен', es: 'Totalmente en desacuerdo', it: 'Fortemente in disaccordo' } },
+  { value: 2, label: { zh: '不同意', 'zh-Hant': '不同意', en: 'Disagree', ja: 'そう思わない', ko: '동의하지 않음', fr: 'Pas d’accord', de: 'Stimme nicht zu', ar: 'أعارض', ru: 'Не согласен', es: 'En desacuerdo', it: 'In disaccordo' } },
+  { value: 3, label: { zh: '一般', 'zh-Hant': '一般', en: 'Neutral', ja: 'どちらでもない', ko: '보통', fr: 'Neutre', de: 'Neutral', ar: 'محايد', ru: 'Нейтрально', es: 'Neutral', it: 'Neutro' } },
+  { value: 4, label: { zh: '同意', 'zh-Hant': '同意', en: 'Agree', ja: 'そう思う', ko: '동의함', fr: 'D’accord', de: 'Stimme zu', ar: 'أوافق', ru: 'Согласен', es: 'De acuerdo', it: 'D’accordo' } },
+  { value: 5, label: { zh: '非常同意', 'zh-Hant': '非常同意', en: 'Strongly agree', ja: 'とてもそう思う', ko: '매우 동의함', fr: 'Tout à fait d’accord', de: 'Stimme voll zu', ar: 'أوافق بشدة', ru: 'Полностью согласен', es: 'Totalmente de acuerdo', it: 'Fortemente d’accordo' } },
 ];
 
