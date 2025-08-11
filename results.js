@@ -10,6 +10,7 @@ function detectLang() {
   if (l.startsWith('de')) return 'de';
   if (l.startsWith('ar')) return 'ar';
   if (l.startsWith('ru')) return 'ru';
+  if (l.startsWith('it')) return 'it';
   if (l.startsWith('es')) return 'es';
   return 'en';
 }
@@ -179,6 +180,22 @@ const RES_UI = {
     colon: ': ',
     totalLabel: 'Total: ',
   },
+  it: {
+    header: 'Il tuo risultato',
+    strengthsTitle: 'I tuoi punti di forza',
+    tipsTitle: 'Suggerimenti per te',
+    scoresTitle: 'Punteggi per ogni dimensione',
+    loading: 'Caricamento...',
+    again: 'Ripeti il test',
+    copy: 'Copia il link del risultato',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">Informativa sulla privacy</a> · <a href="../terms.html">Termini di servizio</a> · Questo test è solo per intrattenimento e auto-riflessione.',
+    copySuccess: 'Link copiato.',
+    copyFail: 'Copia non riuscita, per favore copia manualmente il link',
+    labels: { connector: 'Connettore', explorer: 'Esploratore', organizer: 'Organizzatore', analyst: 'Analista' },
+    sep: ' | ',
+    colon: ': ',
+    totalLabel: 'Totale: ',
+  },
 };
 
 const RES_CONTENT = {
@@ -194,6 +211,7 @@ const RES_CONTENT = {
       ar: 'الموصِل (مدفوع اجتماعيًا) | نتيجة الاختبار',
       ru: 'Коммуникатор (социально ориентированный) | Результат теста',
       es: 'Conector (Impulsado por lo social) | Resultado del test',
+      it: 'Connettore (orientato al sociale) | Risultato del test',
     },
     resultType: {
       zh: '连接者（社交驱动）<span class="badge">非临床 · 娱乐向</span>',
@@ -206,6 +224,7 @@ const RES_CONTENT = {
       ar: 'الموصِل (مدفوع اجتماعيًا)<span class="badge">غير سريري · للمتعة</span>',
       ru: 'Коммуникатор (социально ориентированный)<span class="badge">Неклинический · Для развлечения</span>',
       es: 'Conector (Impulsado por lo social)<span class="badge">No clínico · Con fines recreativos</span>',
+      it: 'Connettore (orientato al sociale)<span class="badge">Non clinico · Per divertimento</span>',
     },
     kv: {
       zh: '类型代号：<code>connector</code>',
@@ -218,6 +237,7 @@ const RES_CONTENT = {
       ar: 'رمز النوع: <code>connector</code>',
       ru: 'Код типа: <code>connector</code>',
       es: 'Código de tipo: <code>connector</code>',
+      it: 'Codice tipo: <code>connector</code>',
     },
     strengths: {
       zh: [
@@ -269,6 +289,11 @@ const RES_CONTENT = {
         'Destacas en la comunicación y la colaboración, construyendo rápidamente confianza y empatía.',
         'Potencia a los demás en el equipo, facilitando el flujo de información y el consenso.',
         'Hábil en integrar recursos e impulsar proyectos entre departamentos.',
+      ],
+      it: [
+        'Abile nella comunicazione e collaborazione, costruisce rapidamente fiducia e intesa.',
+        'Nel team potenzia gli altri facilitando il flusso di informazioni e il raggiungimento del consenso.',
+        'Bravo a integrare risorse e a far avanzare progetti trasversali ai reparti.',
       ],
     },
     tips: {
@@ -322,6 +347,11 @@ const RES_CONTENT = {
         'Aprende a rechazar educadamente las solicitudes de baja prioridad para proteger tu tiempo de trabajo profundo.',
         'Colabora con «Analistas» para respaldar tus ideas con datos y aumentar la persuasión.',
       ],
+      it: [
+        'Per i compiti complessi crea checklist e tabelle di ritmo per evitare di “parlare molto e fare poco”.',
+        'Impara a rifiutare cortesemente le richieste a bassa priorità per proteggere il tempo di lavoro profondo.',
+        'Collabora con gli “Analisti” per supportare le idee con dati e aumentarne la forza persuasiva.',
+      ],
     },
   },
 
@@ -337,6 +367,7 @@ const RES_CONTENT = {
       ar: 'المستكشف (فضولي ومبتكر) | نتيجة الاختبار',
       ru: 'Исследователь (любопытный новатор) | Результат теста',
       es: 'Explorador (Curioso e innovador) | Resultado del test',
+      it: 'Esploratore (curioso e innovatore) | Risultato del test',
     },
     resultType: {
       zh: '探索者（好奇创新）<span class="badge">非临床 · 娱乐向</span>',
@@ -349,6 +380,7 @@ const RES_CONTENT = {
       ar: 'المستكشف (فضولي ومبتكر)<span class="badge">غير سريري · للمتعة</span>',
       ru: 'Исследователь (любопытный новатор)<span class="badge">Неклинический · Для развлечения</span>',
       es: 'Explorador (Curioso e innovador)<span class="badge">No clínico · Con fines recreativos</span>',
+      it: 'Esploratore (curioso e innovatore)<span class="badge">Non clinico · Per divertimento</span>',
     },
     kv: {
       zh: '类型代号：<code>explorer</code>',
@@ -361,6 +393,7 @@ const RES_CONTENT = {
       ar: 'رمز النوع: <code>explorer</code>',
       ru: 'Код типа: <code>explorer</code>',
       es: 'Código de tipo: <code>explorer</code>',
+      it: 'Codice tipo: <code>explorer</code>',
     },
     strengths: {
       zh: [
@@ -412,6 +445,11 @@ const RES_CONTENT = {
         'Sensibilizado a lo nuevo y rápido en el ensayo y error para encontrar soluciones innovadoras.',
         'Creativo y hábil para plantear preguntas desde diferentes perspectivas.',
         'Se adapta rápidamente al cambio y acepta la incertidumbre.',
+      ],
+      it: [
+        'Sensibile alle novità e rapido nel provare e sbagliare per trovare punti di svolta.',
+        'Creativo e bravo a porre domande da prospettive diverse.',
+        'Si adatta velocemente ai cambiamenti e abbraccia l\'incertezza.',
       ],
     },
     tips: {
@@ -465,6 +503,11 @@ const RES_CONTENT = {
         'Convierte las inspiraciones en plantillas reutilizables o procedimientos estándar (SOP).',
         'Colabora con «Organizadores» para convertir ideas en planes ejecutables.',
       ],
+      it: [
+        'Definisci i confini di ogni esperimento: obiettivi, tempo, metriche e criteri di uscita.',
+        'Trasforma le ispirazioni in modelli o procedure operative standard riutilizzabili.',
+        'Collabora con gli “Organizzatori” per trasformare le idee in piani attuabili.',
+      ],
     },
   },
 
@@ -480,6 +523,7 @@ const RES_CONTENT = {
       ar: 'المنظِّم (تنفيذ منظم) | نتيجة الاختبار',
       ru: 'Организатор (упорядоченный исполнитель) | Результат теста',
       es: 'Organizador (Ejecución ordenada) | Resultado del test',
+      it: 'Organizzatore (esecutore ordinato) | Risultato del test',
     },
     resultType: {
       zh: '组织者（有序执行）<span class="badge">非临床 · 娱乐向</span>',
@@ -492,6 +536,7 @@ const RES_CONTENT = {
       ar: 'المنظِّم (تنفيذ منظم)<span class="badge">غير سريري · للمتعة</span>',
       ru: 'Организатор (упорядоченный исполнитель)<span class="badge">Неклинический · Для развлечения</span>',
       es: 'Organizador (Ejecución ordenada)<span class="badge">No clínico · Con fines recreativos</span>',
+      it: 'Organizzatore (esecutore ordinato)<span class="badge">Non clinico · Per divertimento</span>',
     },
     kv: {
       zh: '类型代号：<code>organizer</code>',
@@ -504,6 +549,7 @@ const RES_CONTENT = {
       ar: 'رمز النوع: <code>organizer</code>',
       ru: 'Код типа: <code>organizer</code>',
       es: 'Código de tipo: <code>organizer</code>',
+      it: 'Codice tipo: <code>organizer</code>',
     },
     strengths: {
       zh: [
@@ -555,6 +601,11 @@ const RES_CONTENT = {
         'Hábil en descomponer objetivos, gestionar el ritmo y hacer seguimiento del progreso.',
         'Estable y confiable, capaz de llevar a cabo proyectos complejos.',
         'Se enfoca en las normas y la calidad, cuidando los detalles.',
+      ],
+      it: [
+        'Abile nella scomposizione degli obiettivi, nella gestione del ritmo e nel monitoraggio dei progressi.',
+        'Stabile e affidabile, capace di concretizzare progetti complessi.',
+        'Attento alle norme e alla qualità, con grande cura per i dettagli.',
       ],
     },
     tips: {
@@ -608,6 +659,11 @@ const RES_CONTENT = {
         'Revisa periódicamente para asegurarte de centrarte en el 20 % con mayor impacto.',
         'Colabora con «Exploradores» para inyectar innovación en los procesos.',
       ],
+      it: [
+        'Evita di perseguire troppo la perfezione; lascia margini flessibili nei piani.',
+        'Rivedi regolarmente per assicurarti di concentrarti sul 20% con il maggiore impatto.',
+        'Collabora con gli “Esploratori” per infondere innovazione nei processi.',
+      ],
     },
   },
 
@@ -623,6 +679,7 @@ const RES_CONTENT = {
       ar: 'المحلل (مدفوع بالبيانات) | نتيجة الاختبار',
       ru: 'Аналитик (ориентированный на данные) | Результат теста',
       es: 'Analista (Orientado a los datos) | Resultado del test',
+      it: 'Analista (guidato dai dati) | Risultato del test',
     },
     resultType: {
       zh: '分析者（数据理性）<span class="badge">非临床 · 娱乐向</span>',
@@ -635,6 +692,7 @@ const RES_CONTENT = {
       ar: 'المحلل (مدفوع بالبيانات)<span class="badge">غير سريري · للمتعة</span>',
       ru: 'Аналитик (ориентированный на данные)<span class="badge">Неклинический · Для развлечения</span>',
       es: 'Analista (Orientado a los datos)<span class="badge">No clínico · Con fines recreativos</span>',
+      it: 'Analista (guidato dai dati)<span class="badge">Non clinico · Per divertimento</span>',
     },
     kv: {
       zh: '类型代号：<code>analyst</code>',
@@ -647,6 +705,7 @@ const RES_CONTENT = {
       ar: 'رمز النوع: <code>analyst</code>',
       ru: 'Код типа: <code>analyst</code>',
       es: 'Código de tipo: <code>analyst</code>',
+      it: 'Codice tipo: <code>analyst</code>',
     },
     strengths: {
       zh: [
@@ -699,6 +758,11 @@ const RES_CONTENT = {
         'Hábil en utilizar modelos y datos para revelar los problemas esenciales.',
         'Bueno construyendo sistemas de evaluación y optimizándolos continuamente.',
       ],
+      it: [
+        'Orientato alle prove, con ragionamenti rigorosi e giudizio solido.',
+        "Abile nell'usare modelli e dati per rivelare i problemi fondamentali.",
+        'Capace di costruire sistemi di valutazione e di ottimizzarli continuamente.',
+      ],
     },
     tips: {
       zh: [
@@ -750,6 +814,11 @@ const RES_CONTENT = {
         'Cuidado con la «parálisis por análisis»; establece puntos claros de decisión.',
         'Co-crea con socios de negocio para que los informes conduzcan a acciones.',
         'Colabora con «Conectores» para traducir las ideas en un lenguaje comprensible y accionable.',
+      ],
+      it: [
+        'Attenzione alla “paralisi da analisi”; stabilisci punti decisionali chiari.',
+        'Cocrea con i partner di business per fare in modo che i report portino ad azioni.',
+        'Collabora con i “Connettori” per tradurre gli insight in un linguaggio comprensibile e attuabile.',
       ],
     },
   },

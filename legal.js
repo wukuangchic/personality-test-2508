@@ -10,6 +10,7 @@ const LANG = (() => {
   if (l.startsWith('de')) return 'de';
   if (l.startsWith('ar')) return 'ar';
   if (l.startsWith('ru')) return 'ru';
+  if (l.startsWith('it')) return 'it';
   if (l.startsWith('es')) return 'es';
   return 'en';
 })();
@@ -27,6 +28,7 @@ const LEGAL = {
       ar: 'سياسة الخصوصية',
       ru: 'Политика конфиденциальности',
       es: 'Política de privacidad',
+      it: 'Informativa sulla privacy',
     },
     terms: {
       zh: '服务条款',
@@ -39,6 +41,7 @@ const LEGAL = {
       ar: 'شروط الخدمة',
       ru: 'Условия использования',
       es: 'Términos del servicio',
+      it: 'Termini di servizio',
     },
   },
   copyright: {
@@ -52,6 +55,7 @@ const LEGAL = {
     ar: '© 2025 Psychotest',
     ru: '© 2025 Psychotest',
     es: '© 2025 Psychotest',
+    it: '© 2025 Psychotest',
   },
   privacy: {
     title: {
@@ -65,6 +69,7 @@ const LEGAL = {
       ar: 'سياسة الخصوصية',
       ru: 'Политика конфиденциальности',
       es: 'Política de privacidad',
+      it: 'Informativa sulla privacy',
     },
     content: {
       zh: '<p>我们尊重您的隐私。本网站不收集可识别个人身份的信息。广告和分析可能会使用 Cookie。</p><p>使用本网站即表示您同意谷歌及其他第三方按照其政策处理数据。</p>',
@@ -77,6 +82,7 @@ const LEGAL = {
       ar: '<p>نحن نحترم خصوصيتك. هذا الموقع لا يجمع معلومات شخصية يمكن التعرف عليها. قد تستخدم الإعلانات والتحليلات ملفات تعريف الارتباط.</p><p>باستخدامك لهذا الموقع فإنك توافق على ممارسات البيانات لدى Google والجهات الأخرى.</p>',
       ru: '<p>Мы уважаем вашу конфиденциальность. Этот сайт не собирает персональные данные. Реклама и аналитика могут использовать cookies.</p><p>Используя сайт, вы соглашаетесь с правилами обработки данных Google и других сторон.</p>',
       es: '<p>Respetamos tu privacidad. Este sitio no recopila información personal identificable. Los anuncios y la analítica pueden usar cookies.</p><p>Al usar este sitio, aceptas las prácticas de datos de Google y otros terceros.</p>',
+      it: '<p>Rispettiamo la tua privacy. Questo sito non raccoglie informazioni personali identificabili. Gli annunci e le analisi possono utilizzare cookie.</p><p>Utilizzando questo sito, accetti le pratiche sui dati di Google e di altre terze parti.</p>',
     },
   },
   terms: {
@@ -91,6 +97,7 @@ const LEGAL = {
       ar: 'شروط الخدمة',
       ru: 'Условия использования',
       es: 'Términos del servicio',
+      it: 'Termini di servizio',
     },
     content: {
       zh: '<p>使用本网站即表示您同意这些条款。本测试仅供娱乐，不构成专业建议。</p><p>我们不对因使用本网站而产生的任何损失负责。</p>',
@@ -103,6 +110,7 @@ const LEGAL = {
       ar: '<p>باستخدامك لهذا الموقع فإنك توافق على هذه الشروط. هذا الاختبار للترفيه فقط وليس نصيحة مهنية.</p><p>نحن غير مسؤولين عن أي أضرار ناتجة عن استخدام هذا الموقع.</p>',
       ru: '<p>Используя сайт, вы соглашаетесь с этими условиями. Тест предназначен только для развлечения и не является профессиональным советом.</p><p>Мы не несем ответственности за какой-либо ущерб, возникший из-за использования сайта.</p>',
       es: '<p>Al usar este sitio, aceptas estos términos. La prueba es solo para entretenimiento y no constituye asesoramiento profesional.</p><p>No somos responsables de los daños derivados del uso de este sitio.</p>',
+      it: '<p>Utilizzando questo sito accetti questi termini. Il test è solo a scopo di intrattenimento e non costituisce consulenza professionale.</p><p>Non siamo responsabili per eventuali danni derivanti dall\'uso di questo sito.</p>',
     },
   },
 };
