@@ -757,16 +757,17 @@ const RES_CONTENT = {
 
 function initResult(type) {
   const ui = RES_UI[LANG];
-  const c = RES_CONTENT[type];
+  // use descriptive variable name to avoid confusion with connector score later
+  const content = RES_CONTENT[type];
 
-  document.title = c.title[LANG];
+  document.title = content.title[LANG];
   document.querySelector('h1').textContent = ui.header;
-  document.querySelector('.result-type').innerHTML = c.resultType[LANG];
-  document.querySelector('.kv').innerHTML = c.kv[LANG];
+  document.querySelector('.result-type').innerHTML = content.resultType[LANG];
+  document.querySelector('.kv').innerHTML = content.kv[LANG];
   document.querySelectorAll('h3')[0].textContent = ui.strengthsTitle;
-  document.querySelectorAll('ul')[0].innerHTML = c.strengths[LANG].map(li => `<li>${li}</li>`).join('');
+  document.querySelectorAll('ul')[0].innerHTML = content.strengths[LANG].map(li => `<li>${li}</li>`).join('');
   document.querySelectorAll('h3')[1].textContent = ui.tipsTitle;
-  document.querySelectorAll('ul')[1].innerHTML = c.tips[LANG].map(li => `<li>${li}</li>`).join('');
+  document.querySelectorAll('ul')[1].innerHTML = content.tips[LANG].map(li => `<li>${li}</li>`).join('');
   document.querySelectorAll('h3')[2].textContent = ui.scoresTitle;
   document.getElementById('scores').textContent = ui.loading;
   document.querySelector('.btns a').textContent = ui.again;
@@ -778,15 +779,15 @@ function initResult(type) {
     const a = Number(p.get('analyst') || 0);
     const e = Number(p.get('explorer') || 0);
     const o = Number(p.get('organizer') || 0);
-    const c = Number(p.get('connector') || 0);
+    const cScore = Number(p.get('connector') || 0);
     const labels = ui.labels;
     const scores = [
-      [labels.connector, c],
+      [labels.connector, cScore],
       [labels.explorer, e],
       [labels.organizer, o],
       [labels.analyst, a],
     ];
-    const total = a + e + o + c;
+    const total = a + e + o + cScore;
     const parts = scores.map(([k, v]) => k + ui.colon + v).join(ui.sep);
     document.getElementById('scores').textContent = parts + (total ? ui.sep + ui.totalLabel + total : '');
   })();
