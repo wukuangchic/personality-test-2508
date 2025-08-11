@@ -7,39 +7,39 @@
 =========================================================================== */
 
 :root{
-  --bg: linear-gradient(135deg, #fff0f5 0%, #ffe5ec 100%);
+  --bg: #ffffff;
   --card: #ffffff;
-  --text: #5b1e42;
-  --muted: #a06a80;
-  --line: #ffd6e7;
-  --primary: #ff8fab;
-  --primary-weak: #ffe5ec;
-  --primary-weak-2:#ffc8dd;
-  --accent: #cdb4db;
-  --danger: #ff6f91;
+  --text: #000000;
+  --muted: #666666;
+  --line: #dddddd;
+  --primary: #000000;
+  --primary-weak: #f5f5f5;
+  --primary-weak-2:#e0e0e0;
+  --accent: #808080;
+  --danger: #000000;
   --radius-lg: 20px;
   --radius-md: 12px;
   --radius-sm: 10px;
-  --shadow: 0 6px 24px rgba(91, 30, 66, .08);
+  --shadow: 0 6px 24px rgba(0,0,0,.08);
   --shadow-inset: inset 0 0 0 1px var(--line);
-  --focus: 0 0 0 3px rgba(255,143,171,.35);
+  --focus: 0 0 0 3px rgba(0,0,0,.35);
 }
 
 @media (prefers-color-scheme: dark){
   :root{
-    --bg: linear-gradient(135deg, #2d0b45 0%, #451952 100%);
-    --card: #2f184b;
-    --text: #ffe4f3;
-    --muted: #d8b4e2;
-    --line: #3a254f;
-    --primary: #ff8fab;
-    --primary-weak: #5e2751;
-    --primary-weak-2:#7a316f;
-    --accent: #fbcfe8;
-    --danger: #ff6f91;
+    --bg: #000000;
+    --card: #111111;
+    --text: #ffffff;
+    --muted: #aaaaaa;
+    --line: #333333;
+    --primary: #ffffff;
+    --primary-weak: #1a1a1a;
+    --primary-weak-2:#2a2a2a;
+    --accent: #888888;
+    --danger: #ffffff;
     --shadow: 0 10px 28px rgba(0,0,0,.40);
     --shadow-inset: inset 0 0 0 1px var(--line);
-    --focus: 0 0 0 3px rgba(255,143,171,.45);
+    --focus: 0 0 0 3px rgba(255,255,255,.45);
   }
 }
 
@@ -187,7 +187,7 @@ legend{
 .btn:focus-visible{ outline: none; box-shadow: var(--focus), var(--shadow); }
 
 .btn:not(.ghost){
-  background: linear-gradient(90deg, var(--primary), #ff5d8f);
+  background: var(--primary);
   color: #fff;
 }
 .btn.ghost{
@@ -199,7 +199,7 @@ legend{
 .btn.ghost:hover{
   background: var(--primary-weak);
   color: var(--primary);
-  border-color: #ffc8dd;
+  border-color: var(--line);
 }
 
 .emoji{
@@ -247,7 +247,7 @@ legend{
 }
 .kv{ margin-top: 10px; font-size: 14px; color: var(--text); }
 .kv code{
-  background: rgba(148,163,184,.18);
+  background: rgba(0,0,0,.1);
   padding: 2px 6px;
   border-radius: 8px;
 }
