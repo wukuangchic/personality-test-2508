@@ -100,7 +100,17 @@ document.addEventListener('DOMContentLoaded', () => {
   document.documentElement.lang = LANG;
   document.documentElement.dir = LANG === 'ar' ? 'rtl' : 'ltr';
   document.title = `${UI.title[LANG]}｜Psychotest`;
-  document.getElementById('pageTitle').textContent = UI.title[LANG];
+  document.getElementById('pageTitle').innerHTML = `${UI.title[LANG]}<span class="emoji">🌸</span>`;
+  const emojiEl = document.querySelector('.emoji');
+  const emojis = ['🌸','🎉','🚀','😊','✨','🍀','🎯','🔥','🎈','💡'];
+  setInterval(() => {
+    const current = emojiEl.textContent;
+    let next = current;
+    while (next === current) {
+      next = emojis[Math.floor(Math.random() * emojis.length)];
+    }
+    emojiEl.textContent = next;
+  }, 3000);
   document.getElementById('pageSub').textContent = UI.subtitle[LANG];
   document.getElementById('submitBtn').textContent = UI.submit[LANG];
   document.getElementById('resetBtn').textContent = UI.reset[LANG];
