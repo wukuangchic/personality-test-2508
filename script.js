@@ -105,6 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('submitBtn').textContent = UI.submit[LANG];
   document.getElementById('resetBtn').textContent = UI.reset[LANG];
   document.getElementById('disclaimer').textContent = UI.disclaimer[LANG];
+  document.getElementById('privacyLink').textContent = UI.privacy[LANG];
+  document.getElementById('termsLink').textContent = UI.terms[LANG];
   document.getElementById('copyright').textContent = UI.copyright[LANG];
 
   renderQuestions();

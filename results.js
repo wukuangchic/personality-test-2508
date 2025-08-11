@@ -27,7 +27,7 @@ const RES_UI = {
     loading: '载入中…',
     again: '再测一次',
     copy: '复制结果链接',
-    footer: '© 2025 Psychotest · 本测试仅供娱乐与自我反思。',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">隐私政策</a>｜<a href="../terms.html">服务条款</a> · 本测试仅供娱乐与自我反思。',
     copySuccess: '已复制当前结果链接',
     copyFail: '复制失败，请手动复制地址栏链接',
     labels: { connector: '连接者', explorer: '探索者', organizer: '组织者', analyst: '分析者' },
@@ -43,7 +43,7 @@ const RES_UI = {
     loading: '載入中…',
     again: '再測一次',
     copy: '複製結果連結',
-    footer: '© 2025 Psychotest · 本測試僅供娛樂與自我反思。',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">隱私政策</a>｜<a href="../terms.html">服務條款</a> · 本測試僅供娛樂與自我反思。',
     copySuccess: '已複製當前結果連結',
     copyFail: '複製失敗，請手動複製地址欄連結',
     labels: { connector: '連結者', explorer: '探索者', organizer: '組織者', analyst: '分析者' },
@@ -59,7 +59,7 @@ const RES_UI = {
     loading: 'Loading...',
     again: 'Take Again',
     copy: 'Copy Result Link',
-    footer: '© 2025 Psychotest · This test is for entertainment and self-reflection.',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">Privacy Policy</a> · <a href="../terms.html">Terms of Service</a> · This test is for entertainment and self-reflection.',
     copySuccess: 'Link copied.',
     copyFail: 'Copy failed, please copy link manually',
     labels: { connector: 'Connector', explorer: 'Explorer', organizer: 'Organizer', analyst: 'Analyst' },
@@ -75,7 +75,7 @@ const RES_UI = {
     loading: '読み込み中…',
     again: 'もう一度受ける',
     copy: '結果リンクをコピー',
-    footer: '© 2025 Psychotest · 本テストは娯楽と自己省察のためのものです。',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">プライバシーポリシー</a>｜<a href="../terms.html">利用規約</a> · 本テストは娯楽と自己省察のためのものです。',
     copySuccess: 'リンクをコピーしました。',
     copyFail: 'コピーに失敗しました。手動でリンクをコピーしてください',
     labels: { connector: '連結者', explorer: '探索者', organizer: '組織者', analyst: '分析者' },
@@ -91,7 +91,7 @@ const RES_UI = {
     loading: '로딩 중…',
     again: '다시 테스트',
     copy: '결과 링크 복사',
-    footer: '© 2025 Psychotest · 본 테스트는 오락과 자기 성찰을 위한 것입니다.',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">개인정보 처리방침</a>｜<a href="../terms.html">서비스 약관</a> · 본 테스트는 오락과 자기 성찰을 위한 것입니다.',
     copySuccess: '링크가 복사되었습니다.',
     copyFail: '복사 실패, 링크를 직접 복사하세요',
     labels: { connector: '연결자', explorer: '탐험가', organizer: '조직가', analyst: '분석가' },
@@ -107,7 +107,7 @@ const RES_UI = {
     loading: 'Chargement…',
     again: 'Reprendre',
     copy: 'Copier le lien du résultat',
-    footer: '© 2025 Psychotest · Ce test est uniquement pour le divertissement et l’auto-réflexion.',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">Politique de confidentialité</a> · <a href="../terms.html">Conditions d\'utilisation</a> · Ce test est uniquement pour le divertissement et l’auto-réflexion.',
     copySuccess: 'Lien copié.',
     copyFail: 'Échec de la copie, veuillez copier le lien manuellement',
     labels: { connector: 'Connecteur', explorer: 'Explorateur', organizer: 'Organisateur', analyst: 'Analyste' },
@@ -123,7 +123,7 @@ const RES_UI = {
     loading: 'Wird geladen…',
     again: 'Erneut testen',
     copy: 'Ergebnislink kopieren',
-    footer: '© 2025 Psychotest · Dieser Test dient nur zur Unterhaltung und Selbstreflexion.',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">Datenschutzerklärung</a> · <a href="../terms.html">Nutzungsbedingungen</a> · Dieser Test dient nur zur Unterhaltung und Selbstreflexion.',
     copySuccess: 'Link kopiert.',
     copyFail: 'Kopieren fehlgeschlagen, bitte Link manuell kopieren',
     labels: { connector: 'Vernetzer', explorer: 'Entdecker', organizer: 'Organisator', analyst: 'Analyst' },
@@ -139,7 +139,7 @@ const RES_UI = {
     loading: 'جارٍ التحميل…',
     again: 'أعد الاختبار',
     copy: 'انسخ رابط النتيجة',
-    footer: '© 2025 Psychotest · هذا الاختبار مخصص للترفيه والتأمل الذاتي فقط.',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">سياسة الخصوصية</a> · <a href="../terms.html">شروط الخدمة</a> · هذا الاختبار مخصص للترفيه والتأمل الذاتي فقط.',
     copySuccess: 'تم نسخ الرابط.',
     copyFail: 'فشل النسخ، يرجى نسخ الرابط يدويًا',
     labels: { connector: 'الموصِل', explorer: 'المستكشف', organizer: 'المنظِّم', analyst: 'المحلل' },
@@ -155,7 +155,7 @@ const RES_UI = {
     loading: 'Загрузка…',
     again: 'Пройти снова',
     copy: 'Скопировать ссылку',
-    footer: '© 2025 Psychotest · Этот тест предназначен лишь для развлечения и самоанализа.',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">Политика конфиденциальности</a> · <a href="../terms.html">Условия использования</a> · Этот тест предназначен лишь для развлечения и самоанализа.',
     copySuccess: 'Ссылка скопирована.',
     copyFail: 'Не удалось скопировать, скопируйте ссылку вручную',
     labels: { connector: 'Коммуникатор', explorer: 'Исследователь', organizer: 'Организатор', analyst: 'Аналитик' },
@@ -171,7 +171,7 @@ const RES_UI = {
     loading: 'Cargando…',
     again: 'Volver a probar',
     copy: 'Copiar enlace del resultado',
-    footer: '© 2025 Psychotest · Esta prueba es solo para entretenimiento y auto-reflexión.',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">Política de privacidad</a> · <a href="../terms.html">Términos del servicio</a> · Esta prueba es solo para entretenimiento y auto-reflexión.',
     copySuccess: 'Enlace copiado.',
     copyFail: 'Error al copiar, por favor copia el enlace manualmente',
     labels: { connector: 'Conector', explorer: 'Explorador', organizer: 'Organizador', analyst: 'Analista' },
@@ -772,7 +772,7 @@ function initResult(type) {
   document.getElementById('scores').textContent = ui.loading;
   document.querySelector('.btns a').textContent = ui.again;
   document.getElementById('copyBtn').textContent = ui.copy;
-  document.querySelector('footer p').textContent = ui.footer;
+  document.querySelector('footer p').innerHTML = ui.footer;
 
   (function () {
     const p = new URLSearchParams(location.search);
