@@ -188,7 +188,7 @@ legend{
 
 .btn:not(.ghost){
   background: var(--primary);
-  color: #fff;
+  color: var(--bg);
 }
 .btn.ghost{
   background: transparent;
