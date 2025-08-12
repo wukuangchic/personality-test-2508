@@ -87,7 +87,8 @@ function computeAndRedirect(e) {
 
   // Redirect to result page with query string containing raw scores
   const qs = new URLSearchParams(scores).toString();
-  location.href = `results/${winner}.html?${qs}`;
+  const url = `results/${winner}.html?${qs}`;
+  gtagSendEvent(url);
 }
 
 function resetForm() {
