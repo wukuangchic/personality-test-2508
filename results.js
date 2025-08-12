@@ -12,6 +12,8 @@ function detectLang() {
   if (l.startsWith('ru')) return 'ru';
   if (l.startsWith('it')) return 'it';
   if (l.startsWith('es')) return 'es';
+  if (l.startsWith('tr')) return 'tr';
+  if (l.startsWith('hi')) return 'hi';
   return 'en';
 }
 
@@ -196,6 +198,38 @@ const RES_UI = {
     colon: ': ',
     totalLabel: 'Totale: ',
   },
+  tr: {
+    header: 'Sonucun',
+    strengthsTitle: 'Güçlü Yönlerin',
+    tipsTitle: 'Sana Tavsiyeler',
+    scoresTitle: 'Bu Testteki Boyut Puanları',
+    loading: 'Yükleniyor...',
+    again: 'Tekrar Dene',
+    copy: 'Sonuç Bağlantısını Kopyala',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">Gizlilik Politikası</a>｜<a href="../terms.html">Hizmet Şartları</a> · Bu test yalnızca eğlence ve öz değerlendirme içindir.',
+    copySuccess: 'Bağlantı kopyalandı.',
+    copyFail: 'Kopyalama başarısız, lütfen bağlantıyı elle kopyalayın',
+    labels: { connector: 'Bağlayıcı', explorer: 'Kaşif', organizer: 'Organizatör', analyst: 'Analist' },
+    sep: ' | ',
+    colon: ': ',
+    totalLabel: 'Toplam: ',
+  },
+  hi: {
+    header: 'आपका परिणाम',
+    strengthsTitle: 'आपकी ताकतें',
+    tipsTitle: 'आपके लिए सुझाव',
+    scoresTitle: 'इस परीक्षण के आयामों के स्कोर',
+    loading: 'लोड हो रहा है...',
+    again: 'फिर से करें',
+    copy: 'परिणाम लिंक कॉपी करें',
+    footer: '© 2025 Psychotest · <a href="../privacy.html">गोपनीयता नीति</a>｜<a href="../terms.html">सेवा की शर्तें</a> · यह परीक्षण केवल मनोरंजन और आत्म-चिंतन के लिए है।',
+    copySuccess: 'लिंक कॉपी हो गया।',
+    copyFail: 'कॉपी विफल, कृपया लिंक मैन्युअली कॉपी करें',
+    labels: { connector: 'संबंधक', explorer: 'अन्वेषक', organizer: 'संगठक', analyst: 'विश्लेषक' },
+    sep: ' | ',
+    colon: ': ',
+    totalLabel: 'कुल: ',
+  },
 };
 
 const RES_CONTENT = {
@@ -212,6 +246,8 @@ const RES_CONTENT = {
       ru: 'Коммуникатор (социально ориентированный) | Результат теста',
       es: 'Conector (Impulsado por lo social) | Resultado del test',
       it: 'Connettore (orientato al sociale) | Risultato del test',
+      tr: 'Bağlayıcı (Sosyal Odaklı) | Test Sonucu',
+      hi: 'संबंधक (सामाजिक प्रेरित) | परीक्षण परिणाम',
     },
     resultType: {
       zh: '连接者（社交驱动）<span class="badge">非临床 · 娱乐向</span>',
@@ -225,6 +261,8 @@ const RES_CONTENT = {
       ru: 'Коммуникатор (социально ориентированный)<span class="badge">Неклинический · Для развлечения</span>',
       es: 'Conector (Impulsado por lo social)<span class="badge">No clínico · Con fines recreativos</span>',
       it: 'Connettore (orientato al sociale)<span class="badge">Non clinico · Per divertimento</span>',
+      tr: 'Bağlayıcı (Sosyal Odaklı)<span class="badge">Klinik dışı · Eğlence amaçlı</span>',
+      hi: 'संबंधक (सामाजिक प्रेरित)<span class="badge">गैर-चिकित्सीय · मनोरंजन हेतु</span>',
     },
     kv: {
       zh: '类型代号：<code>connector</code>',
@@ -238,6 +276,8 @@ const RES_CONTENT = {
       ru: 'Код типа: <code>connector</code>',
       es: 'Código de tipo: <code>connector</code>',
       it: 'Codice tipo: <code>connector</code>',
+      tr: 'Tür kodu: <code>connector</code>',
+      hi: 'प्रकार कोड: <code>connector</code>',
     },
     strengths: {
       zh: [
@@ -294,6 +334,16 @@ const RES_CONTENT = {
         'Abile nella comunicazione e collaborazione, costruisce rapidamente fiducia e intesa.',
         'Nel team potenzia gli altri facilitando il flusso di informazioni e il raggiungimento del consenso.',
         'Bravo a integrare risorse e a far avanzare progetti trasversali ai reparti.',
+      ],
+      tr: [
+        'İletişim ve işbirliğinde iyidir, hızlıca güven ve uyum kurar.',
+        'Takımda başkalarını güçlendirir, bilgi akışını ve uzlaşıyı kolaylaştırır.',
+        'Kaynakları entegre etmede ve departmanlar arası projeleri yürütmede ustadır.',
+      ],
+      hi: [
+        'संचार और सहयोग में माहिर, जल्दी ही भरोसा और तालमेल बना लेते हैं।',
+        'टीम में दूसरों को सशक्त करते हैं, सूचना प्रवाह और सहमति को सुगम बनाते हैं।',
+        'संसाधनों को एकीकृत करने और विभागों के बीच परियोजनाओं को आगे बढ़ाने में कुशल।',
       ],
     },
     tips: {
@@ -352,6 +402,16 @@ const RES_CONTENT = {
         'Impara a rifiutare cortesemente le richieste a bassa priorità per proteggere il tempo di lavoro profondo.',
         'Collabora con gli “Analisti” per supportare le idee con dati e aumentarne la forza persuasiva.',
       ],
+      tr: [
+        'Karmaşık görevler için kontrol listeleri ve tempo planları oluştur; “çok konuşup az yapmak”tan kaçın.',
+        'Derin çalışma zamanını korumak için düşük öncelikli istekleri nazikçe reddetmeyi öğren.',
+        'Fikirlerini verilerle desteklemek ve ikna gücünü artırmak için “Analistler”le işbirliği yap.',
+      ],
+      hi: [
+        'जटिल कार्यों के लिए चेकलिस्ट और तालिका बनाएं ताकि “ज्यादा बोलना, कम करना” से बच सकें।',
+        'गहरे काम के समय की रक्षा हेतु कम प्राथमिकता वाले अनुरोधों को विनम्रता से मना करना सीखें।',
+        'डेटा के साथ विचारों का समर्थन करने और प्रभावशीलता बढ़ाने के लिए “विश्लेषकों” के साथ साझेदारी करें।',
+      ],
     },
   },
 
@@ -368,6 +428,8 @@ const RES_CONTENT = {
       ru: 'Исследователь (любопытный новатор) | Результат теста',
       es: 'Explorador (Curioso e innovador) | Resultado del test',
       it: 'Esploratore (curioso e innovatore) | Risultato del test',
+      tr: 'Kaşif (Meraklı Yenilikçi) | Test Sonucu',
+      hi: 'अन्वेषक (जिज्ञासु नवाचारी) | परीक्षण परिणाम',
     },
     resultType: {
       zh: '探索者（好奇创新）<span class="badge">非临床 · 娱乐向</span>',
@@ -381,6 +443,8 @@ const RES_CONTENT = {
       ru: 'Исследователь (любопытный новатор)<span class="badge">Неклинический · Для развлечения</span>',
       es: 'Explorador (Curioso e innovador)<span class="badge">No clínico · Con fines recreativos</span>',
       it: 'Esploratore (curioso e innovatore)<span class="badge">Non clinico · Per divertimento</span>',
+      tr: 'Kaşif (Meraklı Yenilikçi)<span class="badge">Klinik dışı · Eğlence amaçlı</span>',
+      hi: 'अन्वेषक (जिज्ञासु नवाचारी)<span class="badge">गैर-चिकित्सीय · मनोरंजन हेतु</span>',
     },
     kv: {
       zh: '类型代号：<code>explorer</code>',
@@ -394,6 +458,8 @@ const RES_CONTENT = {
       ru: 'Код типа: <code>explorer</code>',
       es: 'Código de tipo: <code>explorer</code>',
       it: 'Codice tipo: <code>explorer</code>',
+      tr: 'Tür kodu: <code>explorer</code>',
+      hi: 'प्रकार कोड: <code>explorer</code>',
     },
     strengths: {
       zh: [
@@ -450,6 +516,16 @@ const RES_CONTENT = {
         'Sensibile alle novità e rapido nel provare e sbagliare per trovare punti di svolta.',
         'Creativo e bravo a porre domande da prospettive diverse.',
         'Si adatta velocemente ai cambiamenti e abbraccia l\'incertezza.',
+      ],
+      tr: [
+        'Yeniliklere duyarlıdır, hızlı deneme-yanılma ile atılım bulur.',
+        'Yaratıcıdır, farklı açılardan sorular sormakta iyidir.',
+        'Değişime hızla uyum sağlar ve belirsizliği kucaklar.',
+      ],
+      hi: [
+        'नई चीज़ों के प्रति संवेदनशील हैं और प्रयोग-त्रुटि से जल्दी समाधान खोज लेते हैं।',
+        'रचनात्मक हैं और विभिन्न दृष्टिकोणों से प्रश्न पूछने में सक्षम।',
+        'परिवर्तन के प्रति जल्दी अनुकूलन करते हैं और अनिश्चितता को स्वीकारते हैं।',
       ],
     },
     tips: {
@@ -508,6 +584,16 @@ const RES_CONTENT = {
         'Trasforma le ispirazioni in modelli o procedure operative standard riutilizzabili.',
         'Collabora con gli “Organizzatori” per trasformare le idee in piani attuabili.',
       ],
+      tr: [
+        'Her deney için hedef, zaman kutusu, metrikler ve çıkış kriterleri gibi sınırlar koy.',
+        'İlhamlarını yeniden kullanılabilir şablonlara veya SOP’lere dönüştür.',
+        'Fikirleri uygulanabilir planlara dönüştürmek için “Organizatörler”le işbirliği yap.',
+      ],
+      hi: [
+        'प्रत्येक प्रयोग के लिए लक्ष्य, समय सीमा, मापदंड और बाहर निकलने की शर्तें तय करें।',
+        'प्रेरणाओं को पुन: उपयोग योग्य टेम्पलेट या SOP में बदलें।',
+        'विचारों को क्रियाशील योजनाओं में बदलने के लिए “संगठकों” के साथ साझेदारी करें।',
+      ],
     },
   },
 
@@ -524,6 +610,8 @@ const RES_CONTENT = {
       ru: 'Организатор (упорядоченный исполнитель) | Результат теста',
       es: 'Organizador (Ejecución ordenada) | Resultado del test',
       it: 'Organizzatore (esecutore ordinato) | Risultato del test',
+      tr: 'Organizatör (Düzenli Uygulayıcı) | Test Sonucu',
+      hi: 'संगठक (सुव्यवस्थित कार्यकर्ता) | परीक्षण परिणाम',
     },
     resultType: {
       zh: '组织者（有序执行）<span class="badge">非临床 · 娱乐向</span>',
@@ -537,6 +625,8 @@ const RES_CONTENT = {
       ru: 'Организатор (упорядоченный исполнитель)<span class="badge">Неклинический · Для развлечения</span>',
       es: 'Organizador (Ejecución ordenada)<span class="badge">No clínico · Con fines recreativos</span>',
       it: 'Organizzatore (esecutore ordinato)<span class="badge">Non clinico · Per divertimento</span>',
+      tr: 'Organizatör (Düzenli Uygulayıcı)<span class="badge">Klinik dışı · Eğlence amaçlı</span>',
+      hi: 'संगठक (सुव्यवस्थित कार्यकर्ता)<span class="badge">गैर-चिकित्सीय · मनोरंजन हेतु</span>',
     },
     kv: {
       zh: '类型代号：<code>organizer</code>',
@@ -550,6 +640,8 @@ const RES_CONTENT = {
       ru: 'Код типа: <code>organizer</code>',
       es: 'Código de tipo: <code>organizer</code>',
       it: 'Codice tipo: <code>organizer</code>',
+      tr: 'Tür kodu: <code>organizer</code>',
+      hi: 'प्रकार कोड: <code>organizer</code>',
     },
     strengths: {
       zh: [
@@ -606,6 +698,16 @@ const RES_CONTENT = {
         'Abile nella scomposizione degli obiettivi, nella gestione del ritmo e nel monitoraggio dei progressi.',
         'Stabile e affidabile, capace di concretizzare progetti complessi.',
         'Attento alle norme e alla qualità, con grande cura per i dettagli.',
+      ],
+      tr: [
+        'Hedefleri parçalara ayırma, tempo yönetimi ve ilerleme takibinde ustadır.',
+        'Stabil ve güvenilirdir, karmaşık projeleri hayata geçirebilir.',
+        'Standartlara ve kaliteye odaklanır, ayrıntılara dikkat eder.',
+      ],
+      hi: [
+        'लक्ष्यों को भागों में बाँटना, गति प्रबंधन और प्रगति ट्रैक करने में माहिर।',
+        'स्थिर और भरोसेमंद, जटिल परियोजनाओं को पूरा करने में सक्षम।',
+        'मानकों और गुणवत्ता पर ध्यान, बारीकियों पर पकड़।',
       ],
     },
     tips: {
@@ -664,6 +766,16 @@ const RES_CONTENT = {
         'Rivedi regolarmente per assicurarti di concentrarti sul 20% con il maggiore impatto.',
         'Collabora con gli “Esploratori” per infondere innovazione nei processi.',
       ],
+      tr: [
+        'Mükemmelliği aşırı kovalamaktan kaçın; planlarda esnek tamponlar bırak.',
+        'Düzenli olarak gözden geçir; en etkili %20’ye odaklandığından emin ol.',
+        'Süreçlere yenilik katmak için “Kaşifler”le çalış.',
+      ],
+      hi: [
+        'अत्यधिक पूर्णता की तलाश से बचें; योजनाओं में लचीला बफर छोड़ें।',
+        'नियमित रूप से समीक्षा करें ताकि सबसे प्रभावशाली 20% पर ध्यान केंद्रित रहे।',
+        'प्रक्रियाओं में नवाचार लाने के लिए “अन्वेषकों” के साथ काम करें।',
+      ],
     },
   },
 
@@ -680,6 +792,8 @@ const RES_CONTENT = {
       ru: 'Аналитик (ориентированный на данные) | Результат теста',
       es: 'Analista (Orientado a los datos) | Resultado del test',
       it: 'Analista (guidato dai dati) | Risultato del test',
+      tr: 'Analist (Veri Odaklı) | Test Sonucu',
+      hi: 'विश्लेषक (डेटा संचालित) | परीक्षण परिणाम',
     },
     resultType: {
       zh: '分析者（数据理性）<span class="badge">非临床 · 娱乐向</span>',
@@ -693,6 +807,8 @@ const RES_CONTENT = {
       ru: 'Аналитик (ориентированный на данные)<span class="badge">Неклинический · Для развлечения</span>',
       es: 'Analista (Orientado a los datos)<span class="badge">No clínico · Con fines recreativos</span>',
       it: 'Analista (guidato dai dati)<span class="badge">Non clinico · Per divertimento</span>',
+      tr: 'Analist (Veri Odaklı)<span class="badge">Klinik dışı · Eğlence amaçlı</span>',
+      hi: 'विश्लेषक (डेटा संचालित)<span class="badge">गैर-चिकित्सीय · मनोरंजन हेतु</span>',
     },
     kv: {
       zh: '类型代号：<code>analyst</code>',
@@ -706,6 +822,8 @@ const RES_CONTENT = {
       ru: 'Код типа: <code>analyst</code>',
       es: 'Código de tipo: <code>analyst</code>',
       it: 'Codice tipo: <code>analyst</code>',
+      tr: 'Tür kodu: <code>analyst</code>',
+      hi: 'प्रकार कोड: <code>analyst</code>',
     },
     strengths: {
       zh: [
@@ -763,6 +881,16 @@ const RES_CONTENT = {
         "Abile nell'usare modelli e dati per rivelare i problemi fondamentali.",
         'Capace di costruire sistemi di valutazione e di ottimizzarli continuamente.',
       ],
+      tr: [
+        'Kanıta odaklıdır, titiz mantık yürütür ve sağlam hüküm verir.',
+        'Modelleri ve verileri kullanarak temel sorunları ortaya çıkarmada ustadır.',
+        'Değerlendirme sistemleri kurmada ve bunları sürekli geliştirmede iyidir.',
+      ],
+      hi: [
+        'साक्ष्य-उन्मुख, तर्क में कठोर और निर्णय में दृढ़।',
+        'मॉडल और डेटा का उपयोग कर मूल समस्याओं को उजागर करने में कुशल।',
+        'मूल्यांकन प्रणालियाँ बनाने और उन्हें निरंतर बेहतर करने में सक्षम।',
+      ],
     },
     tips: {
       zh: [
@@ -819,6 +947,16 @@ const RES_CONTENT = {
         'Attenzione alla “paralisi da analisi”; stabilisci punti decisionali chiari.',
         'Cocrea con i partner di business per fare in modo che i report portino ad azioni.',
         'Collabora con i “Connettori” per tradurre gli insight in un linguaggio comprensibile e attuabile.',
+      ],
+      tr: [
+        '“Analiz felci”ne dikkat et; araştırmalara net karar noktaları koy.',
+        'Raporların eyleme dönüşmesi için iş ortaklarıyla birlikte çalış.',
+        'İçgörüleri anlaşılır ve uygulanabilir dile çevirmek için “Bağlayıcılar”la işbirliği yap.',
+      ],
+      hi: [
+        '“विश्लेषण पक्षाघात” से सावधान रहें; शोध के लिए स्पष्ट निर्णय बिंदु निर्धारित करें।',
+        'रिपोर्टों को कार्रवाई में बदलने के लिए व्यापार साझेदारों के साथ सह-निर्माण करें।',
+        'अंतर्दृष्टियों को सरल और क्रियान्वयन योग्य भाषा में बदलने के लिए “संबंधकों” के साथ सहयोग करें।',
       ],
     },
   },
