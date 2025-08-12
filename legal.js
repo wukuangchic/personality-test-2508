@@ -12,6 +12,8 @@ const LANG = (() => {
   if (l.startsWith('ru')) return 'ru';
   if (l.startsWith('it')) return 'it';
   if (l.startsWith('es')) return 'es';
+  if (l.startsWith('tr')) return 'tr';
+  if (l.startsWith('hi')) return 'hi';
   return 'en';
 })();
 
@@ -29,6 +31,8 @@ const LEGAL = {
       ru: 'Политика конфиденциальности',
       es: 'Política de privacidad',
       it: 'Informativa sulla privacy',
+      tr: 'Gizlilik Politikası',
+      hi: 'गोपनीयता नीति',
     },
     terms: {
       zh: '服务条款',
@@ -42,6 +46,8 @@ const LEGAL = {
       ru: 'Условия использования',
       es: 'Términos del servicio',
       it: 'Termini di servizio',
+      tr: 'Hizmet Şartları',
+      hi: 'सेवा की शर्तें',
     },
   },
   copyright: {
@@ -56,6 +62,8 @@ const LEGAL = {
     ru: '© 2025 Psychotest',
     es: '© 2025 Psychotest',
     it: '© 2025 Psychotest',
+    tr: '© 2025 Psychotest',
+    hi: '© 2025 Psychotest',
   },
   privacy: {
     title: {
@@ -70,6 +78,8 @@ const LEGAL = {
       ru: 'Политика конфиденциальности',
       es: 'Política de privacidad',
       it: 'Informativa sulla privacy',
+      tr: 'Gizlilik Politikası',
+      hi: 'गोपनीयता नीति',
     },
     content: {
       zh: '<p>我们尊重您的隐私。本网站不收集可识别个人身份的信息。广告和分析可能会使用 Cookie。</p><p>使用本网站即表示您同意谷歌及其他第三方按照其政策处理数据。</p>',
@@ -83,6 +93,8 @@ const LEGAL = {
       ru: '<p>Мы уважаем вашу конфиденциальность. Этот сайт не собирает персональные данные. Реклама и аналитика могут использовать cookies.</p><p>Используя сайт, вы соглашаетесь с правилами обработки данных Google и других сторон.</p>',
       es: '<p>Respetamos tu privacidad. Este sitio no recopila información personal identificable. Los anuncios y la analítica pueden usar cookies.</p><p>Al usar este sitio, aceptas las prácticas de datos de Google y otros terceros.</p>',
       it: '<p>Rispettiamo la tua privacy. Questo sito non raccoglie informazioni personali identificabili. Gli annunci e le analisi possono utilizzare cookie.</p><p>Utilizzando questo sito, accetti le pratiche sui dati di Google e di altre terze parti.</p>',
+      tr: '<p>Gizliliğinize saygı duyuyoruz. Bu site kişisel olarak tanımlanabilir bilgi toplamaz. Reklamlar ve analizler çerez kullanabilir.</p><p>Bu siteyi kullanarak Google ve diğer üçüncü tarafların veri uygulamalarını kabul etmiş olursunuz.</p>',
+      hi: '<p>हम आपकी गोपनीयता का सम्मान करते हैं। यह साइट व्यक्तिगत रूप से पहचान योग्य जानकारी एकत्र नहीं करती। विज्ञापन और विश्लेषण के लिए कुकीज़ का उपयोग किया जा सकता है।</p><p>इस साइट का उपयोग करने पर, आप Google और अन्य तृतीय पक्षों की डेटा नीतियों से सहमत होते हैं।</p>',
     },
   },
   terms: {
@@ -98,6 +110,8 @@ const LEGAL = {
       ru: 'Условия использования',
       es: 'Términos del servicio',
       it: 'Termini di servizio',
+      tr: 'Hizmet Şartları',
+      hi: 'सेवा की शर्तें',
     },
     content: {
       zh: '<p>使用本网站即表示您同意这些条款。本测试仅供娱乐，不构成专业建议。</p><p>我们不对因使用本网站而产生的任何损失负责。</p>',
@@ -111,6 +125,8 @@ const LEGAL = {
       ru: '<p>Используя сайт, вы соглашаетесь с этими условиями. Тест предназначен только для развлечения и не является профессиональным советом.</p><p>Мы не несем ответственности за какой-либо ущерб, возникший из-за использования сайта.</p>',
       es: '<p>Al usar este sitio, aceptas estos términos. La prueba es solo para entretenimiento y no constituye asesoramiento profesional.</p><p>No somos responsables de los daños derivados del uso de este sitio.</p>',
       it: '<p>Utilizzando questo sito accetti questi termini. Il test è solo a scopo di intrattenimento e non costituisce consulenza professionale.</p><p>Non siamo responsabili per eventuali danni derivanti dall\'uso di questo sito.</p>',
+      tr: '<p>Bu siteyi kullanarak bu şartları kabul etmiş olursunuz. Test yalnızca eğlence amaçlıdır ve profesyonel tavsiye değildir.</p><p>Bu siteyi kullanmaktan doğabilecek zararlardan sorumlu değiliz.</p>',
+      hi: '<p>इस साइट का उपयोग करके आप इन शर्तों से सहमत होते हैं। यह परीक्षण केवल मनोरंजन के लिए है और कोई पेशेवर सलाह नहीं है।</p><p>इस साइट के उपयोग से होने वाले किसी भी नुकसान के लिए हम जिम्मेदार नहीं हैं।</p>',
     },
   },
 };
