@@ -1,5 +1,11 @@
 // Language detection and translations for legal pages
 const LANG = (() => {
+  const params = new URLSearchParams(window.location.search);
+  const override = params.get('lang');
+  const supported = ['zh','zh-Hant','en','ja','ko','fr','de','ar','ru','es','it','tr','hi'];
+  if (override && supported.includes(override)) {
+    return override;
+  }
   const l = (navigator.language || 'en').toLowerCase();
   if (l.startsWith('zh')) {
     return /tw|hk|mo|hant/.test(l) ? 'zh-Hant' : 'zh';
