@@ -85,9 +85,13 @@ function computeAndRedirect(e) {
     }
   });
 
-  // Redirect to result page with query string containing raw scores
-  const qs = new URLSearchParams(scores).toString();
-  const url = `results/${winner}.html?${qs}`;
+  // Redirect to result page with query string containing raw scores and language
+  const qs = new URLSearchParams(scores);
+  const currentLang = new URLSearchParams(window.location.search).get('lang');
+  if (currentLang) {
+    qs.set('lang', LANG);
+  }
+  const url = `results/${winner}.html?${qs.toString()}`;
   gtagSendEvent(url);
 }
 
